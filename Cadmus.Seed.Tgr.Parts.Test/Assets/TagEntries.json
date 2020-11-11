@@ -1,0 +1,74 @@
+﻿[
+  {
+    "id": "a",
+    "value": "ancient"
+  },
+  {
+    "id": "a.lit",
+    "value": "littera"
+  },
+  {
+    "id": "a.lit.adiectio",
+    "value": "littera: adiectio"
+  },
+  {
+    "id": "a.lit.apex",
+    "value": "littera: apex"
+  },
+  {
+    "id": "a.lit.apocopa",
+    "value": "littera: apocopa"
+  },
+  {
+    "id": "a.lit.aspiratio",
+    "value": "littera: aspiratio"
+  },
+  {
+    "id": "a.lit.concisio",
+    "value": "littera: concisio/syncopa/συγκοπή"
+  },
+  {
+    "id": "a.lit.c",
+    "value": "littera: consonans"
+  },
+  {
+    "id": "a.lit.c.anceps",
+    "value": "littera: consonans: anceps/liquida"
+  },
+  {
+    "id": "a.lit.c.duplex",
+    "value": "littera: consonans: duplex"
+  },
+  {
+    "id": "a.lit.c.geminata",
+    "value": "littera: consonans: geminata"
+  },
+  {
+    "id": "a.lit.c.liquens",
+    "value": "littera: consonans: liquens"
+  },
+  {
+    "id": "a.lit.c.longa",
+    "value": "littera: consonans: longa"
+  },
+  {
+    "id": "a.lit.c.muta",
+    "value": "littera: consonans: muta"
+  },
+  {
+    "id": "a.lit.c.semivocalis",
+    "value": "littera: consonans: semivocalis"
+  },
+  {
+    "id": "a.lit.c.simplex",
+    "value": "littera: consonans: simplex"
+  },
+  {
+    "id": "a.lit.detractio",
+    "value": "detractio"
+  },
+  {
+    "id": "a.lit.dieresis",
+    "value": "dieresis"
+  }
+]

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadmus.Tgr.Parts", "Cadmus.Tgr.Parts\Cadmus.Tgr.Parts.csproj", "{6E5E5C09-6C40-4A86-A314-ADB9A36A9D9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Tgr.Parts.Test", "Cadmus.Tgr.Parts.Test\Cadmus.Tgr.Parts.Test.csproj", "{9BFDCE85-41F9-4DC2-A6B9-9E73D150D809}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{78504CE7-ECB1-4D14-833D-B42E649FFCB4}"
+	ProjectSection(SolutionItems) = preProject
+		InstallToFeed.bat = InstallToFeed.bat
+		Pack.bat = Pack.bat
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Tgr.Services", "Cadmus.Tgr.Services\Cadmus.Tgr.Services.csproj", "{355174BE-A5F5-4F06-8406-532E5AD8D1B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Seed.Tgr.Parts", "Cadmus.Seed.Tgr.Parts\Cadmus.Seed.Tgr.Parts.csproj", "{78CE069A-6900-4368-A213-08A77B675B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Seed.Tgr.Parts.Test", "Cadmus.Seed.Tgr.Parts.Test\Cadmus.Seed.Tgr.Parts.Test.csproj", "{0E60346A-B96F-446B-97D8-FA7A1B32147E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E5E5C09-6C40-4A86-A314-ADB9A36A9D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5E5C09-6C40-4A86-A314-ADB9A36A9D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5E5C09-6C40-4A86-A314-ADB9A36A9D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5E5C09-6C40-4A86-A314-ADB9A36A9D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BFDCE85-41F9-4DC2-A6B9-9E73D150D809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BFDCE85-41F9-4DC2-A6B9-9E73D150D809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BFDCE85-41F9-4DC2-A6B9-9E73D150D809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BFDCE85-41F9-4DC2-A6B9-9E73D150D809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{355174BE-A5F5-4F06-8406-532E5AD8D1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{355174BE-A5F5-4F06-8406-532E5AD8D1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{355174BE-A5F5-4F06-8406-532E5AD8D1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{355174BE-A5F5-4F06-8406-532E5AD8D1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CE069A-6900-4368-A213-08A77B675B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CE069A-6900-4368-A213-08A77B675B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CE069A-6900-4368-A213-08A77B675B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CE069A-6900-4368-A213-08A77B675B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E60346A-B96F-446B-97D8-FA7A1B32147E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E60346A-B96F-446B-97D8-FA7A1B32147E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E60346A-B96F-446B-97D8-FA7A1B32147E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E60346A-B96F-446B-97D8-FA7A1B32147E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {464C6827-A91B-4C42-89E1-8CB4749DA625}
+	EndGlobalSection
+EndGlobal
