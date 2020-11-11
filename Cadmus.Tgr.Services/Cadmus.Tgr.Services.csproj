@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Daniele Fusi</Authors>
+    <Company>Fusi</Company>
+    <Product>Cadmus</Product>
+    <Description>Cadmus TGR project services.</Description>
+    <Copyright>By Daniele Fusi 2020</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +23,7 @@
     <PackageReference Include="Cadmus.Philology.Parts" Version="2.3.0" />
     <PackageReference Include="Cadmus.Seed.Parts" Version="1.1.1" />
     <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="1.1.1" />
+    <PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="1.0.2" />
   </ItemGroup>
 
 </Project>

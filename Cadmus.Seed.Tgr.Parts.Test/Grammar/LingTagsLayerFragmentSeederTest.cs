@@ -67,6 +67,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
             Assert.NotNull(fr);
 
             Assert.Equal("1.1", fr.Location);
+            Assert.Equal(3, fr.Forms.Count);
             // TODO other assertions...
         }
     }

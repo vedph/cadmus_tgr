@@ -4,6 +4,18 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <Authors>Daniele Fusi</Authors>
+
+    <Company>Fusi</Company>
+
+    <Product>Cadmus</Product>
+
+    <Description />
+
+    <Copyright>By Daniele Fusi 2020</Copyright>
+
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
