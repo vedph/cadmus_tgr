@@ -7,6 +7,7 @@ using Xunit;
 using Cadmus.Seed.Tgr.Parts.Grammar;
 using System.Reflection;
 using System.Text.Json;
+using Cadmus.Core.Config;
 
 namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
 {
@@ -39,9 +40,9 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
             Assert.Equal(typeof(LingTagsLayerFragment), seeder.GetFragmentType());
         }
 
-        private SeedThesaurusEntry[] LoadThesaurusEntries()
+        private ThesaurusEntry[] LoadThesaurusEntries()
         {
-            return JsonSerializer.Deserialize<SeedThesaurusEntry[]>(
+            return JsonSerializer.Deserialize<ThesaurusEntry[]>(
                 TestHelper.LoadResourceText("TagEntries.json"),
                 new JsonSerializerOptions
                 {

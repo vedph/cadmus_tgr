@@ -7,10 +7,11 @@
     <Product>Cadmus</Product>
     <Description>Cadmus TGR parts.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cadmus.Core" Version="2.3.0" />
-    <PackageReference Include="Cadmus.Parts" Version="2.3.0" />
+    <PackageReference Include="Cadmus.Core" Version="2.3.1" />
+    <PackageReference Include="Cadmus.Parts" Version="2.3.1" />
     <PackageReference Include="Fusi.Antiquity" Version="1.1.25" />
   </ItemGroup>
   <ItemGroup>

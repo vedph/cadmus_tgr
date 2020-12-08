@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using Cadmus.Core;
+using Cadmus.Core.Config;
 using Cadmus.Core.Layers;
 using Cadmus.Tgr.Parts.Grammar;
 using Fusi.Tools.Config;
@@ -94,24 +95,10 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
     }
 
     /// <summary>
-    /// A thesaurus entry for seeders.
-    /// </summary>
-    public sealed class SeedThesaurusEntry
-    {
-        public string Id { get; set; }
-        public string Value { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Id}: {Value}";
-        }
-    }
-
-    /// <summary>
     /// Options for <see cref="LingTagsLayerFragmentSeeder"/>.
     /// </summary>
     public sealed class LingTagsLayerFragmentSeederOptions
     {
-        public SeedThesaurusEntry[] Entries { get; set; }
+        public ThesaurusEntry[] Entries { get; set; }
     }
 }
