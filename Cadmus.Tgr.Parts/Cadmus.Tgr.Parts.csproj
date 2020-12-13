@@ -14,8 +14,5 @@
     <PackageReference Include="Cadmus.Parts" Version="2.3.2" />
     <PackageReference Include="Fusi.Antiquity" Version="1.1.25" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Codicology\" />
-  </ItemGroup>
 
 </Project>

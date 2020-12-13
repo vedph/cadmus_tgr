@@ -35,8 +35,4 @@
     <ProjectReference Include="..\Cadmus.Tgr.Parts\Cadmus.Tgr.Parts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Codicology\" />
-  </ItemGroup>
-
 </Project>

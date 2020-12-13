@@ -44,4 +44,8 @@
     <ProjectReference Include="..\Cadmus.Seed.Tgr.Parts\Cadmus.Seed.Tgr.Parts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Codicology\" />
+  </ItemGroup>
+
 </Project>
