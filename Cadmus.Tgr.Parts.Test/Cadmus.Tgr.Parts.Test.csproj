@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cadmus.Seed.Tgr.Parts\Cadmus.Seed.Tgr.Parts.csproj" />
     <ProjectReference Include="..\Cadmus.Tgr.Parts\Cadmus.Tgr.Parts.csproj" />
   </ItemGroup>
 

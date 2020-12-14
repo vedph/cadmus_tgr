@@ -22,14 +22,12 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
         /// <param name="factory">The part seeder factory. This is used
         /// for layer parts, which need to seed a set of fragments.</param>
         /// <returns>A new part.</returns>
-        /// <exception cref="ArgumentNullException">item or factory</exception>
+        /// <exception cref="ArgumentNullException">item</exception>
         public override IPart GetPart(IItem item, string roleId,
             PartSeederFactory factory)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
-            if (factory == null)
-                throw new ArgumentNullException(nameof(factory));
 
             MsContentsPart part = new MsContentsPart();
             SetPartMetadata(part, roleId, item);

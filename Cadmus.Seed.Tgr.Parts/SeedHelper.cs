@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using Cadmus.Parts;
+using Cadmus.Parts.General;
 using System.Collections.Generic;
 
 namespace Cadmus.Seed.Tgr.Parts
@@ -29,6 +30,29 @@ namespace Cadmus.Seed.Tgr.Parts
             }
 
             return refs;
+        }
+
+        public static List<PhysicalSize> GetSizes(int min, int max)
+        {
+            List<PhysicalSize> sizes = new List<PhysicalSize>();
+
+            for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
+            {
+                sizes.Add(new Faker<PhysicalSize>()
+                    .RuleFor(s => s.W, f => new PhysicalDimension
+                    {
+                        Unit = "cm",
+                        Value = f.Random.Number(10, 20)
+                    })
+                    .RuleFor(s => s.H, f => new PhysicalDimension
+                    {
+                        Unit = "cm",
+                        Value = f.Random.Number(10, 20)
+                    })
+                    .Generate());
+            }
+
+            return sizes;
         }
     }
 }

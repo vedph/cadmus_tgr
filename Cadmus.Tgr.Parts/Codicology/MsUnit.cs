@@ -20,6 +20,19 @@ namespace Cadmus.Tgr.Parts.Codicology
         public MsLocation End { get; set; }
 
         /// <summary>
+        /// Gets or sets the group identifier for this unit, when it is
+        /// reconstructed as belonging to a codex disiectus.
+        /// </summary>
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the group ordinal. This is used in conjunction
+        /// with <see cref="GroupId"/> and represents the position of this unit
+        /// in the reconstructed codex disiectus.
+        /// </summary>
+        public int GroupOrdinal { get; set; }
+
+        /// <summary>
         /// Gets or sets the palimpsests.
         /// </summary>
         public List<MsPalimpsest> Palimpsests { get; set; }
