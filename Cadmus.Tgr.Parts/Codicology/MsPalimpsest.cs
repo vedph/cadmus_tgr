@@ -2,7 +2,7 @@
 using Fusi.Antiquity.Chronology;
 using System.Collections.Generic;
 
-namespace Cadmus.Seed.Tgr.Parts.Codicology
+namespace Cadmus.Tgr.Parts.Codicology
 {
     /// <summary>
     /// Palimpsest sheets in a <see cref="MsUnit"/>.

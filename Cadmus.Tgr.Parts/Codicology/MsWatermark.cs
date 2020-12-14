@@ -1,4 +1,4 @@
-﻿namespace Cadmus.Seed.Tgr.Parts.Codicology
+﻿namespace Cadmus.Tgr.Parts.Codicology
 {
     /// <summary>
     /// A watermark in a <see cref="MsGuardSheet"/> or <see cref="MsUnit"/>.

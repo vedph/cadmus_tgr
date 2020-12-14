@@ -1,4 +1,4 @@
-﻿namespace Cadmus.Seed.Tgr.Parts.Codicology
+﻿namespace Cadmus.Tgr.Parts.Codicology
 {
     /// <summary>
     /// Manuscript's ruling, used in <see cref="MsUnit"/>.

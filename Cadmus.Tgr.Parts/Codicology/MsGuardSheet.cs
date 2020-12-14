@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Cadmus.Seed.Tgr.Parts.Codicology
+namespace Cadmus.Tgr.Parts.Codicology
 {
     /// <summary>
     /// A guard sheet in a <see cref="MsUnit"/>.
