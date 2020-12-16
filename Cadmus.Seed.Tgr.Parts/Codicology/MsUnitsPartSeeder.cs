@@ -121,7 +121,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                         {
                             N = n, V = even, L = f.Random.Number(1, 40)
                         })
-                    .RuleFor(u => u.Start, f => new MsLocation
+                    .RuleFor(u => u.End, f => new MsLocation
                         {
                             N = n + 3,
                             V = even,
