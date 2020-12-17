@@ -30,7 +30,8 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins: <c>tot-count</c> and a collection of pins with
-        /// these keys: ....</returns>
+        /// these keys: <c>role</c>, <c>language</c>, <c>type</c>,
+        /// <c>hand-id</c>.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item)
         {
             DataPinBuilder builder = new DataPinBuilder();

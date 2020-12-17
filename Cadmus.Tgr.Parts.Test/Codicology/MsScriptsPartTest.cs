@@ -8,11 +8,11 @@ using Xunit;
 
 namespace Cadmus.Tgr.Parts.Test.Codicology
 {
-    public sealed class MsUnitsPartTest
+    public sealed class MsScriptsPartTest
     {
-        private static MsUnitsPart GetPart()
+        private static MsScriptsPart GetPart()
         {
-            MsUnitsPartSeeder seeder = new MsUnitsPartSeeder();
+            MsScriptsPartSeeder seeder = new MsScriptsPartSeeder();
             IItem item = new Item
             {
                 FacetId = "default",
@@ -22,17 +22,17 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                 Title = "Test Item",
                 SortKey = ""
             };
-            return (MsUnitsPart)seeder.GetPart(item, null, null);
+            return (MsScriptsPart)seeder.GetPart(item, null, null);
         }
 
         [Fact]
         public void Part_Is_Serializable()
         {
-            MsUnitsPart part = GetPart();
+            MsScriptsPart part = GetPart();
 
             string json = TestHelper.SerializePart(part);
-            MsUnitsPart part2 =
-                TestHelper.DeserializePart<MsUnitsPart>(json);
+            MsScriptsPart part2 =
+                TestHelper.DeserializePart<MsScriptsPart>(json);
 
             Assert.Equal(part.Id, part2.Id);
             Assert.Equal(part.TypeId, part2.TypeId);
@@ -41,14 +41,15 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
             Assert.Equal(part.CreatorId, part2.CreatorId);
             Assert.Equal(part.UserId, part2.UserId);
 
-            Assert.Equal(part.Units.Count, part2.Units.Count);
+            Assert.Equal(2, part.Scripts.Count);
+            // TODO: details
         }
 
         [Fact]
         public void GetDataPins_NoEntries_Ok()
         {
-            MsUnitsPart part = GetPart();
-            part.Units.Clear();
+            MsScriptsPart part = GetPart();
+            part.Scripts.Clear();
 
             List<DataPin> pins = part.GetDataPins(null).ToList();
 
@@ -62,7 +63,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
         [Fact]
         public void GetDataPins_Entries_Ok()
         {
-            MsUnitsPart part = new MsUnitsPart
+            MsScriptsPart part = new MsScriptsPart
             {
                 ItemId = Guid.NewGuid().ToString(),
                 RoleId = "some-role",
@@ -72,14 +73,18 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
             for (int n = 1; n <= 3; n++)
             {
                 bool even = n % 2 == 0;
-                part.Units.Add(new MsUnit
+                part.Scripts.Add(new MsScript
                 {
-                    Material = even ? "paper" : "parchment",
-                    Palimpsests = even
-                        ? new List<MsPalimpsest>(new[] { new MsPalimpsest() })
-                        : null,
-                    SheetCount = n * 2,
-                    GuardSheetCount = n
+                    Role = even ? "inferior" : "superior",
+                    Language = even ? "grc" : "lat",
+                    Type = even ? "unc" : "cap",
+                    Hands = new List<MsHand>(new[]
+                    {
+                        new MsHand
+                        {
+                            Id = $"h{n}"
+                        }
+                    })
                 });
             }
 
@@ -92,31 +97,37 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
             TestHelper.AssertPinIds(part, pin);
             Assert.Equal("3", pin.Value);
 
-            // material
-            pin = pins.Find(p => p.Name == "material" && p.Value == "parchment");
+            // role
+            pin = pins.Find(p => p.Name == "role" && p.Value == "superior");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
 
-            pin = pins.Find(p => p.Name == "material" && p.Value == "paper");
+            pin = pins.Find(p => p.Name == "role" && p.Value == "inferior");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
 
-            // palimpsest
-            pin = pins.Find(p => p.Name == "palimpsest" && p.Value == "1");
+            // language
+            pin = pins.Find(p => p.Name == "language" && p.Value == "grc");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
 
-            // sheets
+            pin = pins.Find(p => p.Name == "language" && p.Value == "lat");
+            Assert.NotNull(pin);
+            TestHelper.AssertPinIds(part, pin);
+
+            // type
+            pin = pins.Find(p => p.Name == "type" && p.Value == "cap");
+            Assert.NotNull(pin);
+            TestHelper.AssertPinIds(part, pin);
+
+            pin = pins.Find(p => p.Name == "type" && p.Value == "unc");
+            Assert.NotNull(pin);
+            TestHelper.AssertPinIds(part, pin);
+
+            // hand-id
             for (int n = 1; n <= 3; n++)
             {
-                // sheet-count
-                pin = pins.Find(p => p.Name == "sheet-count"
-                    && p.Value == $"{n * 2}");
-                Assert.NotNull(pin);
-                TestHelper.AssertPinIds(part, pin);
-                // guard-sheet-count
-                pin = pins.Find(p => p.Name == "guard-sheet-count"
-                    && p.Value == $"{n}");
+                pin = pins.Find(p => p.Name == "hand-id" && p.Value == $"h{n}");
                 Assert.NotNull(pin);
                 TestHelper.AssertPinIds(part, pin);
             }
