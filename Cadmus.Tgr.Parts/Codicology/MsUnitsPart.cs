@@ -31,8 +31,9 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <param name="item">The optional item. The item with its parts
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
-        /// <returns>The pins: <c>tot-count</c> and a collection of pins with
-        /// these keys: ....</returns>
+        /// <returns>The pins: <c>tot-count</c>, <c>palimpsest</c> (true if any),
+        /// and a collection of pins with these keys: <c>material</c>,
+        /// <c>sheet-count</c>, <c>guard-sheet-count</c>.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item)
         {
             DataPinBuilder builder = new DataPinBuilder();
