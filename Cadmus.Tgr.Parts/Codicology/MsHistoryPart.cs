@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Cadmus.Core;
+using Fusi.Tools.Config;
 
 namespace Cadmus.Tgr.Parts.Codicology
 {
@@ -9,6 +10,7 @@ namespace Cadmus.Tgr.Parts.Codicology
     /// Manuscript's history part.
     /// <para>Tag: <c>it.vedph.tgr.ms-history</c>.</para>
     /// </summary>
+    [Tag("it.vedph.tgr.ms-history")]
     public sealed class MsHistoryPart : PartBase
     {
         /// <summary>
