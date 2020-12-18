@@ -7,7 +7,7 @@
     <Product>Cadmus</Product>
     <Description>Cadmus TGR parts.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Cadmus.Core" Version="2.3.2" />
