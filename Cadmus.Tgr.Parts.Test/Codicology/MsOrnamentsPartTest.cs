@@ -8,11 +8,11 @@ using Xunit;
 
 namespace Cadmus.Tgr.Parts.Test.Codicology
 {
-    public sealed class MsFormalFeaturesPartTest
+    public sealed class MsOrnamentsPartTest
     {
-        private static MsFormalFeaturesPart GetPart()
+        private static MsOrnamentsPart GetPart()
         {
-            MsFormalFeaturesPartSeeder seeder = new MsFormalFeaturesPartSeeder();
+            MsOrnamentsPartSeeder seeder = new MsOrnamentsPartSeeder();
             IItem item = new Item
             {
                 FacetId = "default",
@@ -22,17 +22,28 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                 Title = "Test Item",
                 SortKey = ""
             };
-            return (MsFormalFeaturesPart)seeder.GetPart(item, null, null);
+            return (MsOrnamentsPart)seeder.GetPart(item, null, null);
+        }
+
+        private static MsOrnamentsPart GetEmptyPart()
+        {
+            return new MsOrnamentsPart
+            {
+                ItemId = Guid.NewGuid().ToString(),
+                RoleId = "some-role",
+                CreatorId = "zeus",
+                UserId = "another",
+            };
         }
 
         [Fact]
         public void Part_Is_Serializable()
         {
-            MsFormalFeaturesPart part = GetPart();
+            MsOrnamentsPart part = GetPart();
 
             string json = TestHelper.SerializePart(part);
-            MsFormalFeaturesPart part2 =
-                TestHelper.DeserializePart<MsFormalFeaturesPart>(json);
+            MsOrnamentsPart part2 =
+                TestHelper.DeserializePart<MsOrnamentsPart>(json);
 
             Assert.Equal(part.Id, part2.Id);
             Assert.Equal(part.TypeId, part2.TypeId);
@@ -41,14 +52,14 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
             Assert.Equal(part.CreatorId, part2.CreatorId);
             Assert.Equal(part.UserId, part2.UserId);
 
-            Assert.Equal(part.Features.Count, part2.Features.Count);
+            Assert.Equal(part.Ornaments.Count, part2.Ornaments.Count);
         }
 
         [Fact]
         public void GetDataPins_NoEntries_Ok()
         {
-            MsFormalFeaturesPart part = GetPart();
-            part.Features.Clear();
+            MsOrnamentsPart part = GetPart();
+            part.Ornaments.Clear();
 
             List<DataPin> pins = part.GetDataPins(null).ToList();
 
@@ -62,39 +73,34 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
         [Fact]
         public void GetDataPins_Entries_Ok()
         {
-            MsFormalFeaturesPart part = new MsFormalFeaturesPart
-            {
-                ItemId = Guid.NewGuid().ToString(),
-                RoleId = "some-role",
-                CreatorId = "zeus",
-                UserId = "another"
-            };
+            MsOrnamentsPart part = GetEmptyPart();
+
             for (int n = 1; n <= 3; n++)
             {
-                bool even = n % 2 == 0;
-                part.Features.Add(new MsFormalFeature
+                part.Ornaments.Add(new MsOrnament
                 {
-                    HandId = $"h{n}"
+                    Type = n % 2 == 0 ? "even" : "odd"
                 });
             }
 
             List<DataPin> pins = part.GetDataPins(null).ToList();
 
-            Assert.Equal(4, pins.Count);
+            Assert.Equal(3, pins.Count);
 
             DataPin pin = pins.Find(p => p.Name == "tot-count");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
             Assert.Equal("3", pin.Value);
 
-            // hand-id
-            for (int n = 1; n <= 3; n++)
-            {
-                pin = pins.Find(p => p.Name == "hand-id"
-                    && p.Value == $"h{n}");
-                Assert.NotNull(pin);
-                TestHelper.AssertPinIds(part, pin);
-            }
+            pin = pins.Find(p => p.Name == "type-odd-count");
+            Assert.NotNull(pin);
+            TestHelper.AssertPinIds(part, pin);
+            Assert.Equal("2", pin.Value);
+
+            pin = pins.Find(p => p.Name == "type-even-count");
+            Assert.NotNull(pin);
+            TestHelper.AssertPinIds(part, pin);
+            Assert.Equal("1", pin.Value);
         }
     }
 }
