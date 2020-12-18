@@ -31,7 +31,7 @@
         {
             return $"{Letter}: " +
                 (Description?.Length > 60
-                ? Description.Substring(0, 60)
+                ? Description.Substring(0, 60) + "..."
                 : Description);
         }
     }
