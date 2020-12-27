@@ -1,5 +1,4 @@
-﻿using Cadmus.Core;
-using Cadmus.Core.Layers;
+﻿using Cadmus.Core.Layers;
 using Cadmus.Seed.Tgr.Parts.Grammar;
 using Cadmus.Tgr.Parts.Grammar;
 using Fusi.Tools.Config;

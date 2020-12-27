@@ -15,6 +15,16 @@ namespace Cadmus.Tgr.Parts.Grammar
         public ApparatusEntryType Type { get; set; }
 
         /// <summary>
+        /// Gets or sets the role.
+        /// </summary>
+        public string Role { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tag.
+        /// </summary>
+        public string Tag { get; set; }
+
+        /// <summary>
         /// Gets or sets the language(s).
         /// </summary>
         public string[] Languages { get; set; }
@@ -23,11 +33,6 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// Gets or sets the value.
         /// </summary>
         public string Value { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tag.
-        /// </summary>
-        public string Tag { get; set; }
 
         /// <summary>
         /// Gets or sets the group identifier.

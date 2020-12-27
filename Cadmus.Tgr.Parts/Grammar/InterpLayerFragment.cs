@@ -69,6 +69,8 @@ namespace Cadmus.Tgr.Parts.Grammar
                         filter: true);
                     // fr-tag
                     builder.AddValue(PartBase.FR_PREFIX + "tag", entry.Tag);
+                    // fr-role
+                    builder.AddValue(PartBase.FR_PREFIX + "role", entry.Role);
                 }
             }
 
@@ -97,6 +99,10 @@ namespace Cadmus.Tgr.Parts.Grammar
                 new DataPinDefinition(DataPinValueType.String,
                     PartBase.FR_PREFIX + "tag",
                     "The list of tags.",
+                    "M"),
+                new DataPinDefinition(DataPinValueType.String,
+                    PartBase.FR_PREFIX + "role",
+                    "The list of roles.",
                     "M")
             });
         }

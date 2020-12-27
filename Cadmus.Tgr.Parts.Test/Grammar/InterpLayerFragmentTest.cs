@@ -31,7 +31,8 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
                 {
                     Languages = new[] { even ? "grc" : "lat" },
                     Value = $"value-{n}",
-                    Tag = even? "even" : "odd"
+                    Tag = even? "even" : "odd",
+                    Role = even? "paleo" : "gloss"
                 });
             }
             return fr;
@@ -66,7 +67,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
             InterpLayerFragment fragment = GetEmptyFragment();
             List<DataPin> pins = fragment.GetDataPins(null).ToList();
 
-            Assert.Equal(6, pins.Count);
+            Assert.Equal(8, pins.Count);
 
             // fr-tot-count
             DataPin pin = pins.Find(p => p.Name == PartBase.FR_PREFIX + "tot-count");
@@ -94,6 +95,15 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
 
             pin = pins.Find(p => p.Name == PartBase.FR_PREFIX + "tag"
                && p.Value == "even");
+            Assert.NotNull(pin);
+
+            // fr-role
+            pin = pins.Find(p => p.Name == PartBase.FR_PREFIX + "role"
+               && p.Value == "paleo");
+            Assert.NotNull(pin);
+
+            pin = pins.Find(p => p.Name == PartBase.FR_PREFIX + "role"
+               && p.Value == "gloss");
             Assert.NotNull(pin);
         }
     }

@@ -23,7 +23,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
         /// <returns>Type.</returns>
         public override Type GetFragmentType() => typeof(InterpLayerFragment);
 
-        private static List<ReadingSource> GetReadingSources(int count)
+        internal static List<ReadingSource> GetReadingSources(int count)
         {
             List<ReadingSource> sources = new List<ReadingSource>();
 
@@ -55,6 +55,8 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
                         ? f.Lorem.Sentence()
                         : f.Lorem.Word())
                     .RuleFor(e => e.Tag, f => f.PickRandom(null, "margin"))
+                    .RuleFor(e => e.Role,
+                        f => f.PickRandom("-", "paleo", "gloss", "paratext"))
                     .RuleFor(e => e.GroupId, f => f.PickRandom(null, "group"))
                     .RuleFor(e => e.Note, f => f.Random.Bool(0.25f)
                         ? f.Lorem.Sentence() : null)
