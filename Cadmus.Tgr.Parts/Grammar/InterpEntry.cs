@@ -7,7 +7,7 @@ namespace Cadmus.Tgr.Parts.Grammar
     /// <summary>
     /// An entry in an <see cref="InterpLayerFragment"/>.
     /// </summary>
-    public class InterpolationEntry
+    public class InterpEntry
     {
         /// <summary>
         /// Gets or sets the type.
@@ -50,10 +50,10 @@ namespace Cadmus.Tgr.Parts.Grammar
         public List<VarQuotationEntry> Quotations { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InterpolationEntry"/>
+        /// Initializes a new instance of the <see cref="InterpEntry"/>
         /// class.
         /// </summary>
-        public InterpolationEntry()
+        public InterpEntry()
         {
             Sources = new List<ReadingSource>();
             Quotations = new List<VarQuotationEntry>();

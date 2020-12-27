@@ -28,7 +28,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the entries.
         /// </summary>
-        public List<InterpolationEntry> Entries { get; set; }
+        public List<InterpEntry> Entries { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InterpLayerFragment"/>
@@ -36,7 +36,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </summary>
         public InterpLayerFragment()
         {
-            Entries = new List<InterpolationEntry>();
+            Entries = new List<InterpEntry>();
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Cadmus.Tgr.Parts.Grammar
 
             if (Entries?.Count > 0)
             {
-                foreach (InterpolationEntry entry in Entries)
+                foreach (InterpEntry entry in Entries)
                 {
                     // fr-language
                     if (entry.Languages?.Length > 0)

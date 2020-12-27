@@ -18,7 +18,6 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
     [Tag("seed.fr.it.vedph.tgr.var-quotations")]
     public sealed class VarQuotationsLayerFragmentSeeder : FragmentSeederBase
     {
-
         /// <summary>
         /// Gets the type of the fragment.
         /// </summary>
@@ -101,7 +100,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
             return parallels;
         }
 
-        public static List<VarQuotationEntry> GetQuotationEntries(int count)
+        internal static List<VarQuotationEntry> GetQuotationEntries(int count)
         {
             List<VarQuotationEntry> entries = new List<VarQuotationEntry>();
 
