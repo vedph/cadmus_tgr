@@ -75,13 +75,11 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
         /// <param name="location">The location.</param>
         /// <param name="baseText">The base text.</param>
         /// <returns>A new fragment.</returns>
-        /// <exception cref="ArgumentNullException">item or location or
+        /// <exception cref="ArgumentNullException">location or
         /// baseText</exception>
         public override ITextLayerFragment GetFragment(
             IItem item, string location, string baseText)
         {
-            if (item == null)
-                throw new ArgumentNullException(nameof(item));
             if (location == null)
                 throw new ArgumentNullException(nameof(location));
             if (baseText == null)
