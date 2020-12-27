@@ -68,7 +68,7 @@ namespace Cadmus.Tgr.Parts.Grammar
                     builder.AddValue(PartBase.FR_PREFIX + "value", entry.Value,
                         filter: true);
                     // fr-tag
-                    builder.AddValue(PartBase.FR_PREFIX + "tag", entry.Value);
+                    builder.AddValue(PartBase.FR_PREFIX + "tag", entry.Tag);
                 }
             }
 
