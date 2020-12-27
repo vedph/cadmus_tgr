@@ -11,11 +11,10 @@ using System.Collections.Generic;
 namespace Cadmus.Seed.Tgr.Parts.Grammar
 {
     /// <summary>
-    /// Seeder for <see cref="__NAME__LayerFragment"/>'s.
+    /// Seeder for <see cref="VarQuotationsLayerFragment"/>'s.
     /// Tag: <c>seed.fr.it.vedph.tgr.var-quotations</c>.
     /// </summary>
     /// <seealso cref="FragmentSeederBase" />
-    /// <seealso cref="IConfigurable{__NAME__LayerFragmentSeederOptions}" />
     [Tag("seed.fr.it.vedph.tgr.var-quotations")]
     public sealed class VarQuotationsLayerFragmentSeeder : FragmentSeederBase
     {
