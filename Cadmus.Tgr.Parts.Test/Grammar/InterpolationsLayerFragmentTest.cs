@@ -9,25 +9,25 @@ using Xunit;
 
 namespace Cadmus.Tgr.Parts.Test.Grammar
 {
-    public sealed class InterpLayerFragmentTest
+    public sealed class InterpolationsLayerFragmentTest
     {
-        private static InterpLayerFragment GetFragment()
+        private static InterpolationsLayerFragment GetFragment()
         {
-            var seeder = new InterpLayerFragmentSeeder();
-            return (InterpLayerFragment)
+            var seeder = new InterpolationsLayerFragmentSeeder();
+            return (InterpolationsLayerFragment)
                 seeder.GetFragment(null, "1.2", "exemplum fictum");
         }
 
-        private static InterpLayerFragment GetEmptyFragment()
+        private static InterpolationsLayerFragment GetEmptyFragment()
         {
-            InterpLayerFragment fr = new InterpLayerFragment
+            InterpolationsLayerFragment fr = new InterpolationsLayerFragment
             {
                 Location = "1.23",
             };
             for (int n = 1; n <= 3; n++)
             {
                 bool even = n % 2 == 0;
-                fr.Entries.Add(new InterpEntry
+                fr.Interpolations.Add(new Interpolation
                 {
                     Languages = new[] { even ? "grc" : "lat" },
                     Value = $"value-{n}",
@@ -41,7 +41,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
         [Fact]
         public void Fragment_Has_Tag()
         {
-            TagAttribute attr = typeof(InterpLayerFragment).GetTypeInfo()
+            TagAttribute attr = typeof(InterpolationsLayerFragment).GetTypeInfo()
                 .GetCustomAttribute<TagAttribute>();
             string typeId = attr != null ? attr.Tag : GetType().FullName;
             Assert.NotNull(typeId);
@@ -51,20 +51,20 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
         [Fact]
         public void Fragment_Is_Serializable()
         {
-            InterpLayerFragment fragment = GetFragment();
+            InterpolationsLayerFragment fragment = GetFragment();
 
             string json = TestHelper.SerializeFragment(fragment);
-            InterpLayerFragment fragment2 =
-                TestHelper.DeserializeFragment<InterpLayerFragment>(json);
+            InterpolationsLayerFragment fragment2 =
+                TestHelper.DeserializeFragment<InterpolationsLayerFragment>(json);
 
             Assert.Equal(fragment.Location, fragment2.Location);
-            Assert.NotEmpty(fragment.Entries);
+            Assert.NotEmpty(fragment.Interpolations);
         }
 
         [Fact]
         public void GetDataPins_Tag_1()
         {
-            InterpLayerFragment fragment = GetEmptyFragment();
+            InterpolationsLayerFragment fragment = GetEmptyFragment();
             List<DataPin> pins = fragment.GetDataPins(null).ToList();
 
             Assert.Equal(8, pins.Count);

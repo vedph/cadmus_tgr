@@ -1,7 +1,7 @@
 ﻿namespace Cadmus.Tgr.Parts.Grammar
 {
     /// <summary>
-    /// A source for a reading, used in <see cref="InterpLayerFragment"/>.
+    /// A source for a reading, used in <see cref="InterpolationsLayerFragment"/>.
     /// </summary>
     public class ReadingSource
     {

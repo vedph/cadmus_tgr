@@ -8,11 +8,11 @@ namespace Cadmus.Tgr.Parts.Grammar
 {
     /// <summary>
     /// Humanistic interpolations layer fragment.
-    /// Tag: <c>fr.it.vedph.tgr.interp</c>.
+    /// Tag: <c>fr.it.vedph.tgr.interpolations</c>.
     /// </summary>
     /// <seealso cref="ITextLayerFragment" />
-    [Tag("fr.it.vedph.tgr.interp")]
-    public sealed class InterpLayerFragment : ITextLayerFragment
+    [Tag("fr.it.vedph.tgr.interpolations")]
+    public sealed class InterpolationsLayerFragment : ITextLayerFragment
     {
         /// <summary>
         /// Gets or sets the location of this fragment.
@@ -28,15 +28,15 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the entries.
         /// </summary>
-        public List<InterpEntry> Entries { get; set; }
+        public List<Interpolation> Interpolations { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InterpLayerFragment"/>
+        /// Initializes a new instance of the <see cref="InterpolationsLayerFragment"/>
         /// class.
         /// </summary>
-        public InterpLayerFragment()
+        public InterpolationsLayerFragment()
         {
-            Entries = new List<InterpEntry>();
+            Interpolations = new List<Interpolation>();
         }
 
         /// <summary>
@@ -52,11 +52,12 @@ namespace Cadmus.Tgr.Parts.Grammar
                 new StandardDataPinTextFilter());
 
             // fr-tot-count
-            builder.Set(PartBase.FR_PREFIX + "tot", Entries?.Count ?? 0, false);
+            builder.Set(PartBase.FR_PREFIX + "tot",
+                Interpolations?.Count ?? 0, false);
 
-            if (Entries?.Count > 0)
+            if (Interpolations?.Count > 0)
             {
-                foreach (InterpEntry entry in Entries)
+                foreach (Interpolation entry in Interpolations)
                 {
                     // fr-language
                     if (entry.Languages?.Length > 0)
@@ -119,18 +120,18 @@ namespace Cadmus.Tgr.Parts.Grammar
 
             sb.Append("[Interp]");
 
-            if (Entries?.Count > 0)
+            if (Interpolations?.Count > 0)
             {
                 sb.Append(' ');
                 int n = 0;
-                foreach (var entry in Entries)
+                foreach (var entry in Interpolations)
                 {
                     if (++n > 3) break;
                     if (n > 1) sb.Append("; ");
                     sb.Append(entry);
                 }
-                if (Entries.Count > 3)
-                    sb.Append("...(").Append(Entries.Count).Append(')');
+                if (Interpolations.Count > 3)
+                    sb.Append("...(").Append(Interpolations.Count).Append(')');
             }
 
             return sb.ToString();

@@ -8,7 +8,7 @@
     <Description>Cadmus TGR project services.</Description>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.0.11</Version>
+    <Version>1.0.13</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,11 +19,11 @@
   <ItemGroup>
     <PackageReference Include="Cadmus.Core" Version="2.3.2" />
     <PackageReference Include="Cadmus.Index.Sql" Version="1.1.5" />
-    <PackageReference Include="Cadmus.Itinera.Parts" Version="1.0.9" />
+    <PackageReference Include="Cadmus.Itinera.Parts" Version="1.1.1" />
     <PackageReference Include="Cadmus.Mongo" Version="2.3.5" />
     <PackageReference Include="Cadmus.Parts" Version="2.3.2" />
     <PackageReference Include="Cadmus.Philology.Parts" Version="2.3.3" />
-    <PackageReference Include="Cadmus.Seed.Itinera.Parts" Version="1.0.14" />
+    <PackageReference Include="Cadmus.Seed.Itinera.Parts" Version="1.1.1" />
     <PackageReference Include="Cadmus.Seed.Parts" Version="1.1.4" />
     <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="1.1.5" />
     <PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="1.0.2" />

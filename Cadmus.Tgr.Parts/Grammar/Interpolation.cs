@@ -5,9 +5,9 @@ using System.Text;
 namespace Cadmus.Tgr.Parts.Grammar
 {
     /// <summary>
-    /// An entry in an <see cref="InterpLayerFragment"/>.
+    /// An entry in an <see cref="InterpolationsLayerFragment"/>.
     /// </summary>
-    public class InterpEntry
+    public class Interpolation
     {
         /// <summary>
         /// Gets or sets the type.
@@ -52,16 +52,16 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the quotations.
         /// </summary>
-        public List<VarQuotationEntry> Quotations { get; set; }
+        public List<VarQuotation> Quotations { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InterpEntry"/>
+        /// Initializes a new instance of the <see cref="Interpolation"/>
         /// class.
         /// </summary>
-        public InterpEntry()
+        public Interpolation()
         {
             Sources = new List<ReadingSource>();
-            Quotations = new List<VarQuotationEntry>();
+            Quotations = new List<VarQuotation>();
         }
 
         /// <summary>

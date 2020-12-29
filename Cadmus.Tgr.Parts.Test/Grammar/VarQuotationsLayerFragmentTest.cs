@@ -25,7 +25,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
             for (int n = 1; n <= 3; n++)
             {
                 bool even = n % 2 == 0;
-                fr.Entries.Add(new VarQuotationEntry
+                fr.Quotations.Add(new VarQuotation
                 {
                     Tag = even? "even" : "odd",
                     Authority = even? "gram" : "ling",
@@ -64,7 +64,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
                 TestHelper.DeserializeFragment<VarQuotationsLayerFragment>(json);
 
             Assert.Equal(fragment.Location, fragment2.Location);
-            Assert.NotEmpty(fragment.Entries);
+            Assert.NotEmpty(fragment.Quotations);
         }
 
         [Fact]

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Cadmus.Tgr.Parts.Grammar
 {
     /// <summary>
-    /// A variant in a quotation, used in a <see cref="VarQuotationEntry"/>.
+    /// A variant in a quotation, used in a <see cref="VarQuotation"/>.
     /// </summary>
     public class QuotationVariant
     {

@@ -28,7 +28,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the entries.
         /// </summary>
-        public List<VarQuotationEntry> Entries { get; set; }
+        public List<VarQuotation> Quotations { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VarQuotationsLayerFragment"/>
@@ -36,7 +36,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </summary>
         public VarQuotationsLayerFragment()
         {
-            Entries = new List<VarQuotationEntry>();
+            Quotations = new List<VarQuotation>();
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace Cadmus.Tgr.Parts.Grammar
                 new StandardDataPinTextFilter());
 
             // fr-tot-count
-            builder.Set(PartBase.FR_PREFIX + "tot", Entries?.Count ?? 0, false);
+            builder.Set(PartBase.FR_PREFIX + "tot", Quotations?.Count ?? 0, false);
 
-            if (Entries?.Count > 0)
+            if (Quotations?.Count > 0)
             {
-                foreach (VarQuotationEntry entry in Entries)
+                foreach (VarQuotation entry in Quotations)
                 {
                     // fr-tag
                     builder.AddValue(PartBase.FR_PREFIX + "tag", entry.Tag);
@@ -130,18 +130,18 @@ namespace Cadmus.Tgr.Parts.Grammar
 
             sb.Append("[VarQuotations]");
 
-            if (Entries?.Count > 0)
+            if (Quotations?.Count > 0)
             {
                 sb.Append(' ');
                 int n = 0;
-                foreach (var entry in Entries)
+                foreach (var entry in Quotations)
                 {
                     if (++n > 3) break;
                     if (n > 1) sb.Append("; ");
                     sb.Append(entry);
                 }
-                if (Entries.Count > 3)
-                    sb.Append("...(").Append(Entries.Count).Append(')');
+                if (Quotations.Count > 3)
+                    sb.Append("...(").Append(Quotations.Count).Append(')');
             }
 
             return sb.ToString();

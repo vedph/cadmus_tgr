@@ -10,18 +10,18 @@ using System.Collections.Generic;
 namespace Cadmus.Seed.Tgr.Parts.Grammar
 {
     /// <summary>
-    /// Seeder for <see cref="InterpLayerFragment"/>'s.
-    /// Tag: <c>seed.fr.it.vedph.tgr.interp</c>.
+    /// Seeder for <see cref="InterpolationsLayerFragment"/>'s.
+    /// Tag: <c>seed.fr.it.vedph.tgr.interpolations</c>.
     /// </summary>
     /// <seealso cref="FragmentSeederBase" />
-    [Tag("seed.fr.it.vedph.tgr.interp")]
-    public sealed class InterpLayerFragmentSeeder : FragmentSeederBase
+    [Tag("seed.fr.it.vedph.tgr.interpolations")]
+    public sealed class InterpolationsLayerFragmentSeeder : FragmentSeederBase
     {
         /// <summary>
         /// Gets the type of the fragment.
         /// </summary>
         /// <returns>Type.</returns>
-        public override Type GetFragmentType() => typeof(InterpLayerFragment);
+        public override Type GetFragmentType() => typeof(InterpolationsLayerFragment);
 
         internal static List<ReadingSource> GetReadingSources(int count)
         {
@@ -39,15 +39,15 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
             return sources;
         }
 
-        private static List<InterpEntry> GetEntries(int count)
+        private static List<Interpolation> GetEntries(int count)
         {
-            List<InterpEntry> entries = new List<InterpEntry>();
+            List<Interpolation> entries = new List<Interpolation>();
 
             for (int n = 1; n <= count; n++)
             {
                 var type = (ApparatusEntryType)Randomizer.Seed.Next(0, 4);
 
-                entries.Add(new Faker<InterpEntry>()
+                entries.Add(new Faker<Interpolation>()
                     .RuleFor(e => e.Type, type)
                     .RuleFor(e => e.Languages,
                         f => new string[] { f.PickRandom("lat", "grc") })
@@ -87,9 +87,9 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
             if (baseText == null)
                 throw new ArgumentNullException(nameof(baseText));
 
-            return new Faker<InterpLayerFragment>()
+            return new Faker<InterpolationsLayerFragment>()
                 .RuleFor(fr => fr.Location, location)
-                .RuleFor(fr => fr.Entries, f => GetEntries(f.Random.Number(1, 3)))
+                .RuleFor(fr => fr.Interpolations, f => GetEntries(f.Random.Number(1, 3)))
                 .Generate();
         }
     }

@@ -6,7 +6,7 @@ namespace Cadmus.Tgr.Parts.Grammar
     /// <summary>
     /// Quotation with variants, used in a <see cref="VarQuotationsLayerFragment"/>.
     /// </summary>
-    public class VarQuotationEntry
+    public class VarQuotation
     {
         /// <summary>
         /// Gets or sets the tag.
@@ -40,10 +40,10 @@ namespace Cadmus.Tgr.Parts.Grammar
         public List<QuotationVariant> Variants { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VarQuotationEntry"/>
+        /// Initializes a new instance of the <see cref="VarQuotation"/>
         /// class.
         /// </summary>
-        public VarQuotationEntry()
+        public VarQuotation()
         {
             Parallels = new List<QuotationParallel>();
             Variants = new List<QuotationVariant>();

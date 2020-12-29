@@ -100,13 +100,13 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
             return parallels;
         }
 
-        internal static List<VarQuotationEntry> GetQuotationEntries(int count)
+        internal static List<VarQuotation> GetQuotationEntries(int count)
         {
-            List<VarQuotationEntry> entries = new List<VarQuotationEntry>();
+            List<VarQuotation> entries = new List<VarQuotation>();
 
             for (int n = 1; n <= count; n++)
             {
-                entries.Add(new Faker<VarQuotationEntry>()
+                entries.Add(new Faker<VarQuotation>()
                     .RuleFor(e => e.Tag, f => f.Lorem.Word())
                     .RuleFor(e => e.Authority, f => f.PickRandom("gram", "ling"))
                     .RuleFor(e => e.Work, f => f.Lorem.Word())
@@ -141,7 +141,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
             return new Faker<VarQuotationsLayerFragment>()
                 .RuleFor(fr => fr.Location, location)
-                .RuleFor(fr => fr.Entries,
+                .RuleFor(fr => fr.Quotations,
                     f => GetQuotationEntries(f.Random.Number(1, 3)))
                 .Generate();
         }

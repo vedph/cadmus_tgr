@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Further occurrence of a quotation in other works, used in
-    /// <see cref="VarQuotationEntry"/>.
+    /// <see cref="VarQuotation"/>.
     /// </summary>
     public class QuotationParallel
     {

@@ -20,33 +20,33 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         [Fact]
         public void TypeHasTagAttribute()
         {
-            Type t = typeof(InterpLayerFragmentSeeder);
+            Type t = typeof(InterpolationsLayerFragmentSeeder);
             TagAttribute attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
             Assert.NotNull(attr);
-            Assert.Equal("seed.fr.it.vedph.tgr.interp", attr.Tag);
+            Assert.Equal("seed.fr.it.vedph.tgr.interpolations", attr.Tag);
         }
 
         [Fact]
         public void GetFragmentType_Ok()
         {
-            InterpLayerFragmentSeeder seeder = new InterpLayerFragmentSeeder();
-            Assert.Equal(typeof(InterpLayerFragment), seeder.GetFragmentType());
+            InterpolationsLayerFragmentSeeder seeder = new InterpolationsLayerFragmentSeeder();
+            Assert.Equal(typeof(InterpolationsLayerFragment), seeder.GetFragmentType());
         }
 
         [Fact]
         public void Seed_Ok()
         {
-            InterpLayerFragmentSeeder seeder = new InterpLayerFragmentSeeder();
+            InterpolationsLayerFragmentSeeder seeder = new InterpolationsLayerFragmentSeeder();
 
             ITextLayerFragment fragment = seeder.GetFragment(null, "1.1", "alpha");
 
             Assert.NotNull(fragment);
 
-            InterpLayerFragment fr = fragment as InterpLayerFragment;
+            InterpolationsLayerFragment fr = fragment as InterpolationsLayerFragment;
             Assert.NotNull(fr);
 
             Assert.Equal("1.1", fr.Location);
-            Assert.NotEmpty(fr.Entries);
+            Assert.NotEmpty(fr.Interpolations);
         }
     }
 }
