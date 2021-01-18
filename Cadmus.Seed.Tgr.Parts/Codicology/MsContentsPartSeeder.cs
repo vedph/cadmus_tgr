@@ -41,13 +41,13 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                     .RuleFor(c => c.Start, f => new MsLocation
                     {
                         N = sn,
-                        V = (sn % 2 == 0),
+                        S = sn % 2 == 0? "v" : "r",
                         L = f.Random.Number(1, 20)
                     })
                     .RuleFor(c => c.End, f => new MsLocation
                     {
                         N = (sn + 1),
-                        V = (sn + 1) % 2 == 0,
+                        S = (sn + 1) % 2 == 0 ? "v" : "r",
                         L = f.Random.Number(1, 20)
                     })
                     .RuleFor(c => c.Work, f => $"{f.Lorem.Word()}.{f.Lorem.Word()}")

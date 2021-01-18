@@ -64,7 +64,10 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                     .RuleFor(p => p.Locations,
                         new List<MsLocation>(new MsLocation[]
                         {
-                            new MsLocation { N = n, V = even, L = n + 10 }
+                            new MsLocation
+                            {
+                                N = n, S = even? "v" : "r", L = n + 10
+                            }
                         }))
                     .RuleFor(p => p.Note,
                         f => f.Random.Bool(0.2f) ? f.Lorem.Sentence() : null)
@@ -119,16 +122,18 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                 part.Units.Add(new Faker<MsUnit>()
                     .RuleFor(u => u.Start, f => new MsLocation
                         {
-                            N = n, V = even, L = f.Random.Number(1, 40)
+                            N = n, S = even ? "v" : "r", L = f.Random.Number(1, 40)
                         })
                     .RuleFor(u => u.End, f => new MsLocation
                         {
                             N = n + 3,
-                            V = even,
+                            S = even ? "v" : "r",
                             L = f.Random.Number(1, 40)
                         })
                     .RuleFor(u => u.Palimpsests, f => GetPalimpsests(f.Random.Number(0, 2)))
                     .RuleFor(u => u.Material, f => f.PickRandom("paper", "parchment"))
+                    .RuleFor(u => u.GuardSheetMaterial,
+                        f => f.PickRandom("paper", "parchment"))
                     .RuleFor(u => u.SheetCount, f => f.Random.Number(1, 3))
                     .RuleFor(u => u.GuardSheetCount, guardCount)
                     .RuleFor(u => u.GuardSheets, GetGuardSheets(guardCount))
@@ -136,7 +141,25 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                     .RuleFor(u => u.SheetNumbering, f => f.Lorem.Sentence())
                     .RuleFor(u => u.QuireNumbering, f => f.Lorem.Sentence())
                     .RuleFor(u => u.LeafSizes, SeedHelper.GetSizes(1, 2))
+                    .RuleFor(u => u.LeafSizeSamples,
+                        new List<MsLocation>(new[]
+                        {
+                            new MsLocation
+                            {
+                                N = n,
+                                S = even? "v" : "r"
+                            }
+                        }))
                     .RuleFor(u => u.WrittenAreaSize, SeedHelper.GetSizes(1, 1)[0])
+                    .RuleFor(u => u.WrittenAreaSizeSamples,
+                        new List<MsLocation>(new[]
+                        {
+                            new MsLocation
+                            {
+                                N = n,
+                                S = even? "v" : "r"
+                            }
+                        }))
                     .RuleFor(u => u.Rulings, f => GetRulings(f.Random.Number(1, 2)))
                     .RuleFor(u => u.Watermarks, f => GetWatermarks(f.Random.Number(0, 3)))
                     .RuleFor(u => u.State, f => f.Lorem.Sentence())

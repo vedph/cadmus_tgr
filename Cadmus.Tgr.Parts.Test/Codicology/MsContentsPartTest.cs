@@ -23,8 +23,14 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
             {
                 part.Contents.Add(new MsContent
                 {
-                    Start = new MsLocation { N = n, V = n % 2 == 0, L = n + 10 },
-                    End = new MsLocation { N = n + 3, V = n % 2 == 0, L = n + 5 },
+                    Start = new MsLocation
+                    {
+                        N = n, S = n % 2 == 0 ? "v" : "r", L = n + 10
+                    },
+                    End = new MsLocation
+                    {
+                        N = n + 3, S = n % 2 == 0 ? "v" : "r", L = n + 5
+                    },
                     Work = $"work.{n}",
                     Location = "12.34",
                     Title = $"Title {n}",

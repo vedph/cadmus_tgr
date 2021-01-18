@@ -43,6 +43,11 @@ namespace Cadmus.Tgr.Parts.Codicology
         public string Material { get; set; }
 
         /// <summary>
+        /// Gets or sets the guard sheets material.
+        /// </summary>
+        public string GuardSheetMaterial { get; set; }
+
+        /// <summary>
         /// Gets or sets the sheets count.
         /// </summary>
         public int SheetCount { get; set; }
@@ -78,9 +83,21 @@ namespace Cadmus.Tgr.Parts.Codicology
         public List<PhysicalSize> LeafSizes { get; set; }
 
         /// <summary>
+        /// Gets or sets the location(s) of the sheet(s) used as samples for
+        /// taking the measurements in <see cref="LeafSizes"/>.
+        /// </summary>
+        public List<MsLocation> LeafSizeSamples { get; set; }
+
+        /// <summary>
         /// Gets or sets the size of the written area.
         /// </summary>
         public PhysicalSize WrittenAreaSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the location(s) of the sheet(s) used as samples for
+        /// taking the measurements in <see cref="WrittenAreaSize"/>.
+        /// </summary>
+        public List<MsLocation> WrittenAreaSizeSamples { get; set; }
 
         /// <summary>
         /// Gets or sets the rulings.
@@ -110,6 +127,8 @@ namespace Cadmus.Tgr.Parts.Codicology
             Palimpsests = new List<MsPalimpsest>();
             GuardSheets = new List<MsGuardSheet>();
             LeafSizes = new List<PhysicalSize>();
+            LeafSizeSamples = new List<MsLocation>();
+            WrittenAreaSizeSamples = new List<MsLocation>();
             Rulings = new List<MsRuling>();
             Watermarks = new List<MsWatermark>();
         }

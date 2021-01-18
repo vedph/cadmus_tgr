@@ -45,13 +45,13 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                     .RuleFor(h => h.Start, f => new MsLocation
                     {
                         N = n,
-                        V = even,
+                        S = even ? "v" : "r",
                         L = f.Random.Number(1, 40)
                     })
                     .RuleFor(h => h.End, f => new MsLocation
                     {
                         N = n + 3,
-                        V = even,
+                        S = even ? "v" : "r",
                         L = f.Random.Number(1, 40)
                     })
                     .RuleFor(h => h.Description, f => f.Lorem.Sentence())
@@ -86,7 +86,8 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                 bool even = n % 2 == 0;
                 part.Scripts.Add(new Faker<MsScript>()
                     .RuleFor(s => s.Role, f => f.PickRandom("superior", "inferior"))
-                    .RuleFor(s => s.Language, f => f.PickRandom("lat", "grc"))
+                    .RuleFor(s => s.Languages,
+                        f => new List<string>(new[] { f.PickRandom("lat", "grc") }))
                     .RuleFor(s => s.Type, f => f.PickRandom("cap", "unc"))
                     .RuleFor(s => s.Hands, f => GetHands(f.Random.Number(0, 2)))
                     .Generate());

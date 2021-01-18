@@ -76,7 +76,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                 part.Scripts.Add(new MsScript
                 {
                     Role = even ? "inferior" : "superior",
-                    Language = even ? "grc" : "lat",
+                    Languages = new List<string>(new[] { even ? "grc" : "lat" }),
                     Type = even ? "unc" : "cap",
                     Hands = new List<MsHand>(new[]
                     {

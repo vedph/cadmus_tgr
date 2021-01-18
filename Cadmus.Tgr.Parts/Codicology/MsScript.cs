@@ -16,7 +16,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the language.
         /// </summary>
-        public string Language { get; set; }
+        public List<string> Languages { get; set; }
 
         /// <summary>
         /// Gets or sets the type.
@@ -33,6 +33,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </summary>
         public MsScript()
         {
+            Languages = new List<string>();
             Hands = new List<MsHand>();
         }
 
@@ -44,7 +45,9 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            return $"[{Language}] {Role}: {Type}";
+            return Languages?.Count > 0
+                ? $"[{string.Join(", ", Languages)}] {Role}: {Type}"
+                : $"{Role}: {Type}";
         }
     }
 }

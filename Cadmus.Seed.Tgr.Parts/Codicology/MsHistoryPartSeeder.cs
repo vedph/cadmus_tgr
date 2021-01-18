@@ -40,7 +40,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                         new MsLocation
                         {
                             N = f.Random.Number(1, 30),
-                            V = f.Random.Bool(),
+                            S = f.Random.Bool()? "v" : "r",
                             L = f.Random.Number(1, 40)
                         }
                     }))

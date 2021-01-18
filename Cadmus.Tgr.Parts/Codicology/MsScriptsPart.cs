@@ -43,7 +43,8 @@ namespace Cadmus.Tgr.Parts.Codicology
                 foreach (MsScript script in Scripts)
                 {
                     builder.AddValue("role", script.Role);
-                    builder.AddValue("language", script.Language);
+                    if (script.Languages?.Count > 0)
+                        builder.AddValues("language", script.Languages);
                     builder.AddValue("type", script.Type);
                     if (script.Hands?.Count > 0)
                     {
