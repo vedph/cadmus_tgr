@@ -58,6 +58,11 @@ namespace Cadmus.Tgr.Parts.Codicology
         public int GuardSheetCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the back guard sheets count.
+        /// </summary>
+        public int BackGuardSheetCount { get; set; }
+
+        /// <summary>
         /// Gets or sets the guard sheets.
         /// </summary>
         public List<MsGuardSheet> GuardSheets { get; set; }

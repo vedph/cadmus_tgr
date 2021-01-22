@@ -136,6 +136,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                         f => f.PickRandom("paper", "parchment"))
                     .RuleFor(u => u.SheetCount, f => f.Random.Number(1, 3))
                     .RuleFor(u => u.GuardSheetCount, guardCount)
+                    .RuleFor(u => u.BackGuardSheetCount, guardCount)
                     .RuleFor(u => u.GuardSheets, GetGuardSheets(guardCount))
                     .RuleFor(u => u.Quires, f => f.Lorem.Sentence())
                     .RuleFor(u => u.SheetNumbering, f => f.Lorem.Sentence())

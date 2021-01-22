@@ -52,6 +52,8 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                     })
                     .RuleFor(o => o.Size, SeedHelper.GetSizes(1, 1)[0])
                     .RuleFor(o => o.Description, f => f.Lorem.Sentence())
+                    .RuleFor(o => o.Note,
+                        f => f.Random.Bool(0.25f)? f.Lorem.Sentence() : null)
                     .Generate());
             }
 
