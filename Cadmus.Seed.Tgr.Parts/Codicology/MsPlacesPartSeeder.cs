@@ -40,6 +40,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                     .RuleFor(p => p.Address, f => $"{f.Lorem.Word()}, {f.Lorem.Word()}")
                     .RuleFor(p => p.City, f => f.Address.City())
                     .RuleFor(p => p.Site, f => f.PickRandom("A library", "A monastery"))
+                    .RuleFor(p => p.Rank, (short)n)
                     .RuleFor(p => p.Sources, SeedHelper.GetDocReferences(1, 3))
                     .Generate());
             }

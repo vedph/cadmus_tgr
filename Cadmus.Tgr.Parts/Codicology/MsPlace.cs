@@ -35,6 +35,12 @@ namespace Cadmus.Tgr.Parts.Codicology
         public string Site { get; set; }
 
         /// <summary>
+        /// Gets or sets the rank: 0=not specified, else a value representing
+        /// the likelihood of this location hypothesis.
+        /// </summary>
+        public short Rank { get; set; }
+
+        /// <summary>
         /// Gets or sets the sources for this place identification.
         /// </summary>
         public List<DocReference> Sources { get; set; }
