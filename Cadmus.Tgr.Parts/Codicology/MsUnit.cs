@@ -1,5 +1,5 @@
 ﻿using Cadmus.Parts.General;
-using Cadmus.Tgr.Parts.Codicology;
+using Fusi.Antiquity.Chronology;
 using System.Collections.Generic;
 
 namespace Cadmus.Tgr.Parts.Codicology
@@ -31,6 +31,11 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// in the reconstructed codex disiectus.
         /// </summary>
         public int GroupOrdinal { get; set; }
+
+        /// <summary>
+        /// Gets or sets the optional date for this unit.
+        /// </summary>
+        public HistoricalDate Date { get; set; }
 
         /// <summary>
         /// Gets or sets the palimpsests.
@@ -96,7 +101,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the size of the written area.
         /// </summary>
-        public PhysicalSize WrittenAreaSize { get; set; }
+        public List<PhysicalSize> WrittenAreaSizes { get; set; }
 
         /// <summary>
         /// Gets or sets the location(s) of the sheet(s) used as samples for
@@ -133,6 +138,7 @@ namespace Cadmus.Tgr.Parts.Codicology
             GuardSheets = new List<MsGuardSheet>();
             LeafSizes = new List<PhysicalSize>();
             LeafSizeSamples = new List<MsLocation>();
+            WrittenAreaSizes = new List<PhysicalSize>();
             WrittenAreaSizeSamples = new List<MsLocation>();
             Rulings = new List<MsRuling>();
             Watermarks = new List<MsWatermark>();

@@ -151,7 +151,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
                                 S = even? "v" : "r"
                             }
                         }))
-                    .RuleFor(u => u.WrittenAreaSize, SeedHelper.GetSizes(1, 1)[0])
+                    .RuleFor(u => u.WrittenAreaSizes, SeedHelper.GetSizes(1, 2))
                     .RuleFor(u => u.WrittenAreaSizeSamples,
                         new List<MsLocation>(new[]
                         {
