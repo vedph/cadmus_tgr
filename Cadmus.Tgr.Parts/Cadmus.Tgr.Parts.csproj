@@ -9,15 +9,15 @@
     <Product>Cadmus</Product>
     <Description>Cadmus TGR parts.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.0.16</Version>
+    <Version>1.0.17</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <Copyright>by Daniele Fusi</Copyright>
     <PackageTags>Cadmus;TGR parts</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cadmus.Core" Version="2.3.6" />
-    <PackageReference Include="Cadmus.Parts" Version="2.3.9" />
-    <PackageReference Include="Cadmus.Philology.Parts" Version="2.3.7" />
+    <PackageReference Include="Cadmus.Core" Version="2.3.7" />
+    <PackageReference Include="Cadmus.Parts" Version="2.3.10" />
+    <PackageReference Include="Cadmus.Philology.Parts" Version="2.3.8" />
     <PackageReference Include="Fusi.Antiquity" Version="1.2.0" />
   </ItemGroup>
 
