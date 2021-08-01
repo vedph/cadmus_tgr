@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using Cadmus.Parts;
+using Cadmus.Bricks;
 using Cadmus.Parts.General;
 using System.Collections.Generic;
 

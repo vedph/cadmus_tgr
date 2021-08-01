@@ -1,6 +1,6 @@
 ﻿using Cadmus.Core;
 using Cadmus.Core.Layers;
-using Cadmus.Parts;
+using Cadmus.Bricks;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
