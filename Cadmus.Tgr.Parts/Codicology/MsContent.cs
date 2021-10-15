@@ -1,4 +1,5 @@
 ﻿using Cadmus.Bricks;
+using Cadmus.Refs.Bricks;
 using System.Collections.Generic;
 
 namespace Cadmus.Tgr.Parts.Codicology

@@ -1,10 +1,10 @@
 ﻿using Cadmus.Core;
 using Cadmus.Core.Layers;
-using Cadmus.Bricks;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using Xunit;
+using Cadmus.Refs.Bricks;
 
 namespace Cadmus.Tgr.Parts.Test
 {
@@ -65,9 +65,7 @@ namespace Cadmus.Tgr.Parts.Test
             {
                 citations.Add(new DocReference
                 {
-                    Author = "Hom.",
-                    Work = "Il.",
-                    Location = "1.23",
+                    Citation = "Hom., Il., 1.23",
                     Note = $"Note {n}",
                     Tag = n % 2 == 0 ? "even" : "odd"
                 });
