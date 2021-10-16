@@ -26,4 +26,36 @@ and their respective seeders.
 
 We can provision an upgrade path which just concatenates author+work of the legacy references into a single citation, using some convention.
 
-(3) `MsSignaturesPart` and `MsSignature` have been moved from Itinera to this project (Itinera is going to use a new generation model for codicology). Apart from their tag change, their code is unaffected.
+(3) `MsSignaturesPart` and `MsSignature` have been moved from Itinera to this project (Itinera is going to use a new generation model for codicology). Apart from their tag change, their code is unaffected. So, we need to update the profile by replacing 'itinera' with 'tgr':
+
+(3.1.) in Mongo: update the parts:
+
+```js
+db.parts.updateMany({ "typeId" : "it.vedph.itinera.ms-signatures" }, { $set: { "typeId": "it.vedph.tgr.ms-signatures"}});
+```
+
+Update the facets: find the facet having the `itinera` part:
+
+```js
+db.getCollection("facets").find({ "partDefinitions.typeId" : "it.vedph.itinera.ms-signatures" });
+```
+
+It should have index=1 in the facets array. Now looking at its `partDefinitions` array, note its index; it should be 5. Then update:
+
+```js
+db.getCollection("facets").updateOne({ "partDefinitions.typeId" : "it.vedph.itinera.ms-signatures" }, { $set: { "partDefinitions.$.typeId": "it.vedph.tgr.ms-signatures"}});
+```
+
+If you now look at the collection, the above find should match nothing.
+
+Finally, update the `model-types` thesaurus to add a new entry for `it.vedph.tgr.ms-signatures`:
+
+```js
+db.getCollection("thesauri").updateOne({ "_id": "model-types@en" }, { $push: { entries: { _id: "it.vedph.tgr.ms-signatures", value: "ms signatures" } } });
+```
+
+(3.2.) in index:
+
+```sql
+UPDATE `cadmus-tgr`.`pin` SET partTypeId='it.vedph.tgr.ms-signatures' WHERE partTypeId='it.vedph.itinera.ms-signatures';
+```

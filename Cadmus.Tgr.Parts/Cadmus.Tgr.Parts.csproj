@@ -9,7 +9,7 @@
     <Product>Cadmus</Product>
     <Description>Cadmus TGR parts.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <Copyright>by Daniele Fusi</Copyright>
     <PackageTags>Cadmus;TGR parts</PackageTags>
@@ -18,6 +18,7 @@
     <PackageReference Include="Cadmus.Core" Version="2.4.0" />
     <PackageReference Include="Cadmus.Parts" Version="2.5.1" />
     <PackageReference Include="Cadmus.Philology.Parts" Version="2.4.0" />
+    <PackageReference Include="Cadmus.Refs.Bricks" Version="2.0.1" />
     <PackageReference Include="Fusi.Antiquity" Version="1.2.0" />
   </ItemGroup>
 
