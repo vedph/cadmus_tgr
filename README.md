@@ -4,8 +4,8 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+- 2021-11-22: upgraded to refactored Cadmus components (API endpoints).
 - 2021-11-11 (v 2.0.0): upgraded to NET 6.
-
 - 2021-10-15 (v 1.1.0): breaking changes:
 
 (1) for auth database by AspNetCore.Identity.Mongo 8.3.1 (used since Cadmus.Api.Controllers 1.3.0, Cadmus.Api.Services 1.2.0):

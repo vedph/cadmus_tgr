@@ -58,14 +58,10 @@ namespace Cadmus.Tgr.Services
         /// <summary>
         /// Creates a Cadmus repository.
         /// </summary>
-        /// <param name="database">The database name.</param>
         /// <returns>repository</returns>
         /// <exception cref="ArgumentNullException">null database</exception>
-        public ICadmusRepository CreateRepository(string database)
+        public ICadmusRepository CreateRepository()
         {
-            if (database == null)
-                throw new ArgumentNullException(nameof(database));
-
             // create the repository (no need to use container here)
             MongoCadmusRepository repository =
                 new MongoCadmusRepository(
@@ -75,7 +71,8 @@ namespace Cadmus.Tgr.Services
             repository.Configure(new MongoCadmusRepositoryOptions
             {
                 ConnectionString = string.Format(
-                    _configuration.GetConnectionString("Default"), database)
+                    _configuration.GetConnectionString("Default"),
+                    _configuration.GetValue<string>("DatabaseNames:Data"))
             });
 
             return repository;
