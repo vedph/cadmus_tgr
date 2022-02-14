@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using Cadmus.Core;
 using Cadmus.Core.Layers;
-using Cadmus.Philology.Parts.Layers;
+using Cadmus.Philology.Parts;
 using Cadmus.Tgr.Parts.Grammar;
 using Fusi.Tools.Config;
 using System;

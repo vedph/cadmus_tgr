@@ -1,5 +1,4 @@
 ﻿using Cadmus.Philology.Parts;
-using Cadmus.Philology.Parts.Layers;
 using System.Collections.Generic;
 
 namespace Cadmus.Tgr.Parts.Grammar

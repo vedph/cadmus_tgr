@@ -5,7 +5,7 @@ using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
 using Cadmus.Mongo;
 using Cadmus.Parts.General;
-using Cadmus.Philology.Parts.Layers;
+using Cadmus.Philology.Parts;
 using Cadmus.Tgr.Parts.Grammar;
 using Microsoft.Extensions.Configuration;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
@@ -18,7 +18,6 @@ namespace Cadmus.Tgr.Services
     public sealed class TgrRepositoryProvider : IRepositoryProvider
     {
         private readonly IConfiguration _configuration;
-        private readonly TagAttributeToTypeMap _map;
         private readonly IPartTypeProvider _partTypeProvider;
 
         /// <summary>
@@ -32,10 +31,10 @@ namespace Cadmus.Tgr.Services
             _configuration = configuration ??
                 throw new ArgumentNullException(nameof(configuration));
 
-            _map = new TagAttributeToTypeMap();
-            _map.Add(new[]
+            TagAttributeToTypeMap map = new TagAttributeToTypeMap();
+            map.Add(new[]
             {
-                // Cadmus.Parts
+                // Cadmus.General.Parts
                 typeof(NotePart).GetTypeInfo().Assembly,
                 // Cadmus.Philology.Parts
                 typeof(ApparatusLayerFragment).GetTypeInfo().Assembly,
@@ -43,7 +42,7 @@ namespace Cadmus.Tgr.Services
                 typeof(LingTagsLayerFragment).GetTypeInfo().Assembly
             });
 
-            _partTypeProvider = new StandardPartTypeProvider(_map);
+            _partTypeProvider = new StandardPartTypeProvider(map);
         }
 
         /// <summary>

@@ -2,7 +2,6 @@
 using Cadmus.Core;
 using Cadmus.Core.Layers;
 using Cadmus.Philology.Parts;
-using Cadmus.Philology.Parts.Layers;
 using Cadmus.Tgr.Parts.Grammar;
 using Fusi.Tools.Config;
 using System;

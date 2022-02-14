@@ -1,28 +1,27 @@
-﻿using Cadmus.Core.Config;
+﻿using Cadmus.Cli.Core;
+using Cadmus.Core.Config;
 using Cadmus.Seed;
 using Cadmus.Seed.General.Parts;
 using Cadmus.Seed.Philology.Parts;
 using Cadmus.Seed.Tgr.Parts.Grammar;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
+using Fusi.Tools.Config;
 using Microsoft.Extensions.Configuration;
 using SimpleInjector;
 using System;
 using System.Reflection;
 
-namespace Cadmus.Tgr.Services
+namespace Cadmus.Cli.Plugin.Tgr
 {
     /// <summary>
-    /// Tgr part seeders provider.
+    /// CLI part seeder factory provider for Tgr.
+    /// Tag: <c>cli-seeder-factory-provider.Tgr</c>.
     /// </summary>
-    public sealed class TgrPartSeederFactoryProvider :
-        IPartSeederFactoryProvider
+    /// <seealso cref="ICliPartSeederFactoryProvider" />
+    [Tag("cli-seeder-factory-provider.Tgr")]
+    public sealed class TgrCliPartSeederFactoryProvider
+        : ICliPartSeederFactoryProvider
     {
-        /// <summary>
-        /// Gets the part/fragment seeders factory.
-        /// </summary>
-        /// <param name="profile">The profile.</param>
-        /// <returns>Factory.</returns>
-        /// <exception cref="ArgumentNullException">profile</exception>
         public PartSeederFactory GetFactory(string profile)
         {
             if (profile == null)
@@ -38,7 +37,7 @@ namespace Cadmus.Tgr.Services
                 // Cadmus.Seed.Tgr.Parts
                 typeof(LingTagsLayerFragmentSeeder).GetTypeInfo().Assembly
             };
-            TagAttributeToTypeMap map = new TagAttributeToTypeMap();
+            TagAttributeToTypeMap map = new();
             map.Add(seedAssemblies);
 
             // build the container for seeders

@@ -1,4 +1,4 @@
-﻿using Cadmus.Philology.Parts.Layers;
+﻿using Cadmus.Philology.Parts;
 using System.Collections.Generic;
 using System.Text;
 
