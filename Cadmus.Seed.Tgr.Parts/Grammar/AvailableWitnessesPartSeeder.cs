@@ -27,6 +27,24 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
             return c;
         }
 
+        internal static IList<AvailableWitness> GenerateWitnesses(int count)
+        {
+            List<AvailableWitness> witnesses = new List<AvailableWitness>();
+            HashSet<char> ids = new HashSet<char>();
+
+            for (int n = 1; n <= count; n++)
+            {
+                ids.Add(PickLetter(ids));
+                witnesses.Add(new Faker<AvailableWitness>()
+                    .RuleFor(w => w.Id, new string(PickLetter(ids), 1))
+                    .RuleFor(w => w.IsPartial, f => f.Random.Bool(0.25f))
+                    .RuleFor(w => w.Note, f => f.Random.Bool(0.25f)
+                        ? f.Lorem.Sentence() : null)
+                    .Generate());
+            }
+            return witnesses;
+        }
+
         /// <summary>
         /// Creates and seeds a new part.
         /// </summary>
@@ -44,18 +62,8 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
             AvailableWitnessesPart part = new AvailableWitnessesPart();
             SetPartMetadata(part, roleId, item);
-            HashSet<char> ids = new HashSet<char>();
-
-            for (int n = 1; n <= Randomizer.Seed.Next(1, 5); n++)
-            {
-                ids.Add(PickLetter(ids));
-                part.Witnesses.Add(new Faker<AvailableWitness>()
-                    .RuleFor(w => w.Id, new string(PickLetter(ids), 1))
-                    .RuleFor(w => w.IsPartial, f => f.Random.Bool(0.25f))
-                    .RuleFor(w => w.Note, f => f.Random.Bool(0.25f)
-                        ? f.Lorem.Sentence() : null)
-                    .Generate());
-            }
+            part.Witnesses.AddRange(
+                GenerateWitnesses(Randomizer.Seed.Next(1, 5)));
 
             return part;
         }

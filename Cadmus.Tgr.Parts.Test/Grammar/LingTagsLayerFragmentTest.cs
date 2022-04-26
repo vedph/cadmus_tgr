@@ -12,7 +12,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
     {
         private static LingTagsLayerFragment GetFragment()
         {
-            LingTagsLayerFragment fragment = new LingTagsLayerFragment
+            LingTagsLayerFragment fragment = new()
             {
                 Location = "1.23",
             };

@@ -20,7 +20,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
 
         private static InterpolationsLayerFragment GetEmptyFragment()
         {
-            InterpolationsLayerFragment fr = new InterpolationsLayerFragment
+            InterpolationsLayerFragment fr = new()
             {
                 Location = "1.23",
             };

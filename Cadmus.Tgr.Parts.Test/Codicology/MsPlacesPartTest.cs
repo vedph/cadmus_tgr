@@ -12,7 +12,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
     {
         private static MsPlacesPart GetPart()
         {
-            MsPlacesPartSeeder seeder = new MsPlacesPartSeeder();
+            MsPlacesPartSeeder seeder = new();
             IItem item = new Item
             {
                 FacetId = "default",

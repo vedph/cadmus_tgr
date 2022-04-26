@@ -12,7 +12,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
     {
         private static MsFormalFeaturesPart GetPart()
         {
-            MsFormalFeaturesPartSeeder seeder = new MsFormalFeaturesPartSeeder();
+            MsFormalFeaturesPartSeeder seeder = new();
             IItem item = new Item
             {
                 FacetId = "default",
@@ -62,7 +62,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
         [Fact]
         public void GetDataPins_Entries_Ok()
         {
-            MsFormalFeaturesPart part = new MsFormalFeaturesPart
+            MsFormalFeaturesPart part = new()
             {
                 ItemId = Guid.NewGuid().ToString(),
                 RoleId = "some-role",

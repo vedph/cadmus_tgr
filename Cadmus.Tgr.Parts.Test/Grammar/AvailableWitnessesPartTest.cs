@@ -13,7 +13,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
         private static AvailableWitnessesPart GetPart()
         {
             AvailableWitnessesPartSeeder seeder =
-                new AvailableWitnessesPartSeeder();
+                new();
             IItem item = new Item
             {
                 FacetId = "default",

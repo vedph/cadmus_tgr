@@ -20,7 +20,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
 
         private static VarQuotationsLayerFragment GetEmptyFragment()
         {
-            VarQuotationsLayerFragment fr = new VarQuotationsLayerFragment();
+            VarQuotationsLayerFragment fr = new();
 
             for (int n = 1; n <= 3; n++)
             {

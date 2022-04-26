@@ -11,7 +11,7 @@ namespace Cadmus.Tgr.Parts.Test
     internal sealed class TestHelper
     {
         private static readonly JsonSerializerOptions _options =
-            new JsonSerializerOptions
+            new()
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             };
@@ -59,7 +59,7 @@ namespace Cadmus.Tgr.Parts.Test
 
         public static List<DocReference> GetDocReferences(int count)
         {
-            List<DocReference> citations = new List<DocReference>();
+            List<DocReference> citations = new();
 
             for (int n = 1; n <= count; n++)
             {

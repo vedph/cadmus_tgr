@@ -11,7 +11,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
     {
         private static MsContentsPart GetPart(int count)
         {
-            MsContentsPart part = new MsContentsPart
+            MsContentsPart part = new()
             {
                 ItemId = Guid.NewGuid().ToString(),
                 RoleId = "some-role",
