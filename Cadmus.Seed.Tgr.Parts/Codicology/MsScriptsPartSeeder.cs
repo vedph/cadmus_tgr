@@ -18,7 +18,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
     {
         private List<MsHandLetter> GetLetters(int count)
         {
-            List<MsHandLetter> letters = new List<MsHandLetter>();
+            List<MsHandLetter> letters = new();
             for (int n = 1; n <= count; n++)
             {
                 char c = (char)('A' + Randomizer.Seed.Next(0, 26));
@@ -34,7 +34,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
 
         private List<MsHand> GetHands(int count)
         {
-            List<MsHand> hands = new List<MsHand>();
+            List<MsHand> hands = new();
             for (int n = 1; n <= count; n++)
             {
                 bool even = n % 2 == 0;
@@ -77,7 +77,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
 
-            MsScriptsPart part = new MsScriptsPart();
+            MsScriptsPart part = new();
             SetPartMetadata(part, roleId, item);
 
             int count = Randomizer.Seed.Next(1, 5 + 1);

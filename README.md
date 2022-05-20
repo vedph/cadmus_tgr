@@ -4,6 +4,16 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 2.0.2
+
+- 2022-05-29: updated packages.
+
+### 2.0.1
+
+- 2022-05-13: fixed dependencies to correctly point to Cadmus.General.Parts.
+
+### 2.0.0
+
 - 2022-04-24: added `AvailableWitnessesLayerFragment` and its related code.
 - 2022-04-22: updated packages
 - 2022-02-14: upgraded to new Cadmus part libraries.

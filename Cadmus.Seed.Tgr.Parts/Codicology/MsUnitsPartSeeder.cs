@@ -18,7 +18,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
     {
         private static List<MsGuardSheet> GetGuardSheets(int count)
         {
-            List<MsGuardSheet> sheets = new List<MsGuardSheet>();
+            List<MsGuardSheet> sheets = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -38,7 +38,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
 
         private static List<MsWatermark> GetWatermarks(int count)
         {
-            List<MsWatermark> watermarks = new List<MsWatermark>();
+            List<MsWatermark> watermarks = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -54,7 +54,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
 
         private static List<MsPalimpsest> GetPalimpsests(int count)
         {
-            List<MsPalimpsest> palimpsests = new List<MsPalimpsest>();
+            List<MsPalimpsest> palimpsests = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -79,7 +79,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
 
         private static List<MsRuling> GetRulings(int count)
         {
-            List<MsRuling> rulings = new List<MsRuling>();
+            List<MsRuling> rulings = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -110,7 +110,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
 
-            MsUnitsPart part = new MsUnitsPart();
+            MsUnitsPart part = new();
             SetPartMetadata(part, roleId, item);
 
             int count = Randomizer.Seed.Next(1, 5 + 1);

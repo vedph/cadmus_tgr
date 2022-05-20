@@ -25,7 +25,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         internal static List<ReadingSource> GetReadingSources(int count)
         {
-            List<ReadingSource> sources = new List<ReadingSource>();
+            List<ReadingSource> sources = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -41,7 +41,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         private static List<Interpolation> GetEntries(int count)
         {
-            List<Interpolation> entries = new List<Interpolation>();
+            List<Interpolation> entries = new();
 
             for (int n = 1; n <= count; n++)
             {

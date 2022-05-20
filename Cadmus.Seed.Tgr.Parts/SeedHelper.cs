@@ -1,6 +1,5 @@
 ﻿using Bogus;
-using Cadmus.Bricks;
-using Cadmus.Parts.General;
+using Cadmus.General.Parts;
 using Cadmus.Refs.Bricks;
 using System.Collections.Generic;
 
@@ -16,7 +15,7 @@ namespace Cadmus.Seed.Tgr.Parts
         /// <returns>References.</returns>
         public static List<DocReference> GetDocReferences(int min, int max)
         {
-            List<DocReference> refs = new List<DocReference>();
+            List<DocReference> refs = new();
 
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
             {
@@ -33,7 +32,7 @@ namespace Cadmus.Seed.Tgr.Parts
 
         public static List<PhysicalSize> GetSizes(int min, int max)
         {
-            List<PhysicalSize> sizes = new List<PhysicalSize>();
+            List<PhysicalSize> sizes = new();
 
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
             {

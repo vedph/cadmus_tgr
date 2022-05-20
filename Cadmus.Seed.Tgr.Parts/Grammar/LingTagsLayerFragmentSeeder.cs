@@ -62,7 +62,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         private List<LingTaggedForm> GetForms(int count)
         {
-            List<LingTaggedForm> forms = new List<LingTaggedForm>();
+            List<LingTaggedForm> forms = new();
             for (int i = 0; i < count; i++)
                 forms.Add(GetForm());
             return forms;

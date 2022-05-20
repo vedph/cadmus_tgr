@@ -31,7 +31,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
 
-            MsSignaturesPart part = new MsSignaturesPart();
+            MsSignaturesPart part = new();
             SetPartMetadata(part, roleId, item);
 
             for (int n = 1; n <= Randomizer.Seed.Next(1, 3 + 1); n++)

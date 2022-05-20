@@ -1,4 +1,4 @@
-﻿using Cadmus.Parts.General;
+﻿using Cadmus.General.Parts;
 using Fusi.Antiquity.Chronology;
 using System.Collections.Generic;
 

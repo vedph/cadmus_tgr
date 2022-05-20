@@ -18,7 +18,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
     {
         private static List<GeoAddress> GetProvenances(int count)
         {
-            List<GeoAddress> provenances = new List<GeoAddress>();
+            List<GeoAddress> provenances = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -54,7 +54,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
 
         private static List<MsAnnotation> GetAnnotations(int count)
         {
-            List<MsAnnotation> annotations = new List<MsAnnotation>();
+            List<MsAnnotation> annotations = new();
 
             for (int n = 1; n <= count; n++)
             {

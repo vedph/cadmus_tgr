@@ -29,7 +29,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
 
-            MsContentsPart part = new MsContentsPart();
+            MsContentsPart part = new();
             SetPartMetadata(part, roleId, item);
 
             int count = Randomizer.Seed.Next(1, 3 + 1);

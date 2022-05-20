@@ -2,8 +2,8 @@
 using Cadmus.Core;
 using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
+using Cadmus.General.Parts;
 using Cadmus.Mongo;
-using Cadmus.Parts.General;
 using Cadmus.Philology.Parts;
 using Cadmus.Tgr.Parts.Grammar;
 using Fusi.Tools.Config;

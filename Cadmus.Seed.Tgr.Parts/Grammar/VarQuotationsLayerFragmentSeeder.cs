@@ -25,7 +25,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         private static List<AnnotatedValue> GetAnnotatedValues(int count)
         {
-            List<AnnotatedValue> values = new List<AnnotatedValue>();
+            List<AnnotatedValue> values = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -41,7 +41,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         private static List<LocAnnotatedValue> GetLocAnnotatedValues(int count)
         {
-            List<LocAnnotatedValue> values = new List<LocAnnotatedValue>();
+            List<LocAnnotatedValue> values = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -60,7 +60,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         private static List<QuotationVariant> GetQuotationVariants(int count)
         {
-            List<QuotationVariant> variants = new List<QuotationVariant>();
+            List<QuotationVariant> variants = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -84,7 +84,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         private static List<QuotationParallel> GetQuotationParallels(int count)
         {
-            List<QuotationParallel> parallels = new List<QuotationParallel>();
+            List<QuotationParallel> parallels = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -101,7 +101,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         internal static List<VarQuotation> GetQuotationEntries(int count)
         {
-            List<VarQuotation> entries = new List<VarQuotation>();
+            List<VarQuotation> entries = new();
 
             for (int n = 1; n <= count; n++)
             {

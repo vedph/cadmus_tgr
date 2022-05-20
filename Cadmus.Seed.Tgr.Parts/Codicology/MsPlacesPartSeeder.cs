@@ -1,6 +1,5 @@
 ﻿using Bogus;
 using Cadmus.Core;
-using Cadmus.Parts.General;
 using Cadmus.Tgr.Parts.Codicology;
 using Fusi.Tools.Config;
 using System;
@@ -29,7 +28,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
         {
             if (item == null) throw new ArgumentNullException(nameof(item));
 
-            MsPlacesPart part = new MsPlacesPart();
+            MsPlacesPart part = new();
             SetPartMetadata(part, roleId, item);
 
             for (int n = 1; n <= Randomizer.Seed.Next(1, 3 + 1); n++)

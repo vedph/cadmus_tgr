@@ -29,8 +29,8 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
 
         internal static IList<AvailableWitness> GenerateWitnesses(int count)
         {
-            List<AvailableWitness> witnesses = new List<AvailableWitness>();
-            HashSet<char> ids = new HashSet<char>();
+            List<AvailableWitness> witnesses = new();
+            HashSet<char> ids = new();
 
             for (int n = 1; n <= count; n++)
             {
@@ -60,7 +60,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
 
-            AvailableWitnessesPart part = new AvailableWitnessesPart();
+            AvailableWitnessesPart part = new();
             SetPartMetadata(part, roleId, item);
             part.Witnesses.AddRange(
                 GenerateWitnesses(Randomizer.Seed.Next(1, 5)));
