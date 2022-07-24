@@ -22,7 +22,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets an optional note about this form.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Gets or sets the tags.
@@ -46,18 +46,18 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             if (Lemmata?.Count > 0)
             {
-                sb.Append(string.Join("; ", Lemmata)).Append(": ");
+                sb.AppendJoin("; ", Lemmata).Append(": ");
             }
             if (Tags?.Count > 0)
             {
                 sb.Append(string.Join(", ", Tags.Select(t => t.Value)));
             }
 
-            return sb.Length > 0? sb.ToString() : base.ToString();
+            return sb.Length > 0? sb.ToString() : base.ToString()!;
         }
     }
 }

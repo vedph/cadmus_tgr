@@ -8,7 +8,7 @@
         /// <summary>
         /// Gets or sets the witness identifier.
         /// </summary>
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the coverage
@@ -19,7 +19,7 @@
         /// <summary>
         /// Gets or sets a short note about this witness availability.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Converts to string.

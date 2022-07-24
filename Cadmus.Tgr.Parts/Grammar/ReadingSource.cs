@@ -8,12 +8,12 @@
         /// <summary>
         /// Gets or sets the witness.
         /// </summary>
-        public string Witness { get; set; }
+        public string? Witness { get; set; }
 
         /// <summary>
         /// Gets or sets the hand identifier.
         /// </summary>
-        public string HandId { get; set; }
+        public string? HandId { get; set; }
 
         /// <summary>
         /// Converts to string.
@@ -23,7 +23,7 @@
         /// </returns>
         public override string ToString()
         {
-            return Witness ?? base.ToString();
+            return Witness ?? base.ToString()!;
         }
     }
 }

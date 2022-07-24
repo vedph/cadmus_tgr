@@ -9,12 +9,12 @@
         /// <summary>
         /// Gets or sets the description.
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or sets the hand identifier.
         /// </summary>
-        public string HandId { get; set; }
+        public string? HandId { get; set; }
 
         /// <summary>
         /// Converts to string.
@@ -26,7 +26,7 @@
         {
             return $"[{HandId}] " +
                 (Description?.Length > 60
-                ? Description.Substring(0, 60) + "..."
+                ? Description[..60] + "..."
                 : Description);
         }
     }

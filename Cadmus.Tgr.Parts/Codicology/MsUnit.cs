@@ -12,18 +12,18 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the start location.
         /// </summary>
-        public MsLocation Start { get; set; }
+        public MsLocation? Start { get; set; }
 
         /// <summary>
         /// Gets or sets the end location.
         /// </summary>
-        public MsLocation End { get; set; }
+        public MsLocation? End { get; set; }
 
         /// <summary>
         /// Gets or sets the group identifier for this unit, when it is
         /// reconstructed as belonging to a codex disiectus.
         /// </summary>
-        public string GroupId { get; set; }
+        public string? GroupId { get; set; }
 
         /// <summary>
         /// Gets or sets the group ordinal. This is used in conjunction
@@ -35,7 +35,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the optional date for this unit.
         /// </summary>
-        public HistoricalDate Date { get; set; }
+        public HistoricalDate? Date { get; set; }
 
         /// <summary>
         /// Gets or sets the palimpsests.
@@ -45,12 +45,12 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the material.
         /// </summary>
-        public string Material { get; set; }
+        public string? Material { get; set; }
 
         /// <summary>
         /// Gets or sets the guard sheets material.
         /// </summary>
-        public string GuardSheetMaterial { get; set; }
+        public string? GuardSheetMaterial { get; set; }
 
         /// <summary>
         /// Gets or sets the sheets count.
@@ -75,17 +75,17 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the quires description.
         /// </summary>
-        public string Quires { get; set; }
+        public string? Quires { get; set; }
 
         /// <summary>
         /// Gets or sets the sheet numbering description.
         /// </summary>
-        public string SheetNumbering { get; set; }
+        public string? SheetNumbering { get; set; }
 
         /// <summary>
         /// Gets or sets the quire numbering description.
         /// </summary>
-        public string QuireNumbering { get; set; }
+        public string? QuireNumbering { get; set; }
 
         /// <summary>
         /// Gets or sets the leaf sizes.
@@ -122,12 +122,12 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the state.
         /// </summary>
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Gets or sets the binding.
         /// </summary>
-        public string Binding { get; set; }
+        public string? Binding { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MsUnit"/> class.

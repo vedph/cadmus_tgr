@@ -10,7 +10,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the tag value.
         /// </summary>
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the notes.

@@ -31,11 +31,10 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <param name="item">The optional item. The item with its parts
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
-        /// <returns>The pins: <c>tot-count</c> and a collection of pins with
-        /// these keys: ....</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        /// <returns>The pins: <c>tot-count</c> and a collection of pins.</returns>
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 new StandardDataPinTextFilter());
 
             builder.Set("tot", Places?.Count ?? 0, false);
@@ -112,7 +111,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[MsPlaces]");
 

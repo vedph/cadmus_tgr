@@ -8,22 +8,22 @@
         /// <summary>
         /// Gets or sets the manner of execution.
         /// </summary>
-        public string Manner { get; set; }
+        public string? Manner { get; set; }
 
         /// <summary>
         /// Gets or sets the system.
         /// </summary>
-        public string System { get; set; }
+        public string? System { get; set; }
 
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Converts to string.

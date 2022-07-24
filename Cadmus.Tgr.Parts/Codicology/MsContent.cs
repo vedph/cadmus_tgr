@@ -12,42 +12,42 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the start.
         /// </summary>
-        public MsLocation Start { get; set; }
+        public MsLocation? Start { get; set; }
 
         /// <summary>
         /// Gets or sets the end.
         /// </summary>
-        public MsLocation End { get; set; }
+        public MsLocation? End { get; set; }
 
         /// <summary>
         /// Gets or sets the author and work conventional citation.
         /// </summary>
-        public string Work { get; set; }
+        public string? Work { get; set; }
 
         /// <summary>
         /// Gets or sets the location in the work.
         /// </summary>
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Gets or sets the incipit.
         /// </summary>
-        public string Incipit { get; set; }
+        public string? Incipit { get; set; }
 
         /// <summary>
         /// Gets or sets the explicit.
         /// </summary>
-        public string Explicit { get; set; }
+        public string? Explicit { get; set; }
 
         /// <summary>
         /// Gets or sets the note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Gets or sets the editions.

@@ -14,7 +14,7 @@
         /// geographical indication in the hierarchy further specified by
         /// <see cref="Address"/>.
         /// </summary>
-        public string Area { get; set; }
+        public string? Area { get; set; }
 
         /// <summary>
         /// Gets or sets the optional address inside the area. This is a string
@@ -22,7 +22,7 @@
         /// addresses typically used in geocoding systems. Components are
         /// separated by comma.
         /// </summary>
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         /// <summary>
         /// Converts to string.
@@ -32,7 +32,7 @@
         /// </returns>
         public override string ToString()
         {
-            return string.IsNullOrEmpty(Address) ? Area : $"{Area}, {Address}";
+            return string.IsNullOrEmpty(Address) ? Area! : $"{Area}, {Address}";
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             sb.Append(N);
             if (!string.IsNullOrEmpty(S)) sb.Append(S);
             if (L > 0) sb.Append(L);

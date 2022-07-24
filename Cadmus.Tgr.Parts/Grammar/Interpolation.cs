@@ -17,32 +17,32 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the role.
         /// </summary>
-        public string Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// Gets or sets the tag.
         /// </summary>
-        public string Tag { get; set; }
+        public string? Tag { get; set; }
 
         /// <summary>
         /// Gets or sets the language(s).
         /// </summary>
-        public string[] Languages { get; set; }
+        public IList<string>? Languages { get; set; }
 
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the group identifier.
         /// </summary>
-        public string GroupId { get; set; }
+        public string? GroupId { get; set; }
 
         /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Gets or sets the sources.
@@ -72,9 +72,9 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             sb.Append('[').Append(Type).Append(']');
-            if (Languages?.Length > 0) sb.Append(string.Join(", ", Languages));
+            if (Languages?.Count > 0) sb.AppendJoin(", ", Languages);
             sb.Append(": ").Append(Value);
             return sb.ToString();
         }

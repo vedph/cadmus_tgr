@@ -8,12 +8,12 @@
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Converts to string.
@@ -24,7 +24,7 @@
         public override string ToString()
         {
             return $"{Value}: " + (Description?.Length > 60
-                ? Description.Substring(0, 60) + "..." : Description);
+                ? Description[..60] + "..." : Description);
         }
     }
 }

@@ -12,12 +12,12 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the date.
         /// </summary>
-        public HistoricalDate Date { get; set; }
+        public HistoricalDate? Date { get; set; }
 
         /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Gets or sets the palimpsest location(s).

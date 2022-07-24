@@ -11,7 +11,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// Gets or sets the role (e.g. main hand, secondary hand, scriptio
         /// superior, scriptio inferior, etc.).
         /// </summary>
-        public string Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// Gets or sets the language.
@@ -21,7 +21,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Gets or sets the hands.

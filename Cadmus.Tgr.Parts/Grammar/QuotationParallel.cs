@@ -9,17 +9,17 @@
         /// <summary>
         /// Gets or sets the tag.
         /// </summary>
-        public string Tag { get; set; }
+        public string? Tag { get; set; }
 
         /// <summary>
         /// Gets or sets the work citation.
         /// </summary>
-        public string Work { get; set; }
+        public string? Work { get; set; }
 
         /// <summary>
         /// Gets or sets the location in the work.
         /// </summary>
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         /// <summary>
         /// Converts to string.

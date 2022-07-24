@@ -34,9 +34,9 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <returns>The pins: <c>tot-count</c>, <c>palimpsest</c> (true if any),
         /// and a collection of pins with these keys: <c>material</c>,
         /// <c>sheet-count</c>, <c>guard-sheet-count</c>.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new();
 
             builder.Set("tot", Units?.Count ?? 0, false);
 
@@ -98,7 +98,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[MsUnits]");
 

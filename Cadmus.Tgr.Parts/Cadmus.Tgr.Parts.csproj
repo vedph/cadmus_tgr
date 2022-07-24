@@ -4,6 +4,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <TargetFramework>net6.0</TargetFramework>
+	<Nullable>enable</Nullable>
     <Authors>Daniele Fusi</Authors>
     <Company>Fusi</Company>
     <Product>Cadmus</Product>

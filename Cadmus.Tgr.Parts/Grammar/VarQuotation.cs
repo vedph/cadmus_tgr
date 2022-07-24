@@ -11,22 +11,22 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the tag.
         /// </summary>
-        public string Tag { get; set; }
+        public string? Tag { get; set; }
 
         /// <summary>
         /// Gets or sets the authority type (grammatical, linguistic).
         /// </summary>
-        public string Authority { get; set; }
+        public string? Authority { get; set; }
 
         /// <summary>
         /// Gets or sets the work.
         /// </summary>
-        public string Work { get; set; }
+        public string? Work { get; set; }
 
         /// <summary>
         /// Gets or sets the location.
         /// </summary>
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         /// <summary>
         /// Gets or sets further occurrences of the same quotation in other works.
@@ -57,7 +57,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             if (!string.IsNullOrEmpty(Tag))
                 sb.Append('[').Append(Tag).Append("] ");

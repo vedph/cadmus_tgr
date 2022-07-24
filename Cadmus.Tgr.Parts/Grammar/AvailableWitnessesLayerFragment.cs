@@ -22,7 +22,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// simple token-based coordinates system (e.g. 1.2=second token of
         /// first block), or a more complex system like an XPath expression.
         /// </remarks>
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         /// <summary>
         /// Gets or sets the witnesses.
@@ -43,7 +43,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <returns>Pins.</returns>
         public IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new();
 
             builder.Set(PartBase.FR_PREFIX + "tot", Witnesses?.Count ?? 0, false);
 

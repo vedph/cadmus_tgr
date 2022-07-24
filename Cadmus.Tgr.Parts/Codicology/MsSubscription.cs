@@ -10,22 +10,22 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the language.
         /// </summary>
-        public string Language { get; set; }
+        public string? Language { get; set; }
 
         /// <summary>
         /// Gets or sets the text.
         /// </summary>
-        public string Text { get; set; }
+        public string? Text { get; set; }
 
         /// <summary>
         /// Gets or sets the hand identifier.
         /// </summary>
-        public string HandId { get; set; }
+        public string? HandId { get; set; }
 
         /// <summary>
         /// Gets or sets the note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Gets or sets the location(s).

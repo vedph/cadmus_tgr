@@ -24,7 +24,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// simple token-based coordinates system (e.g. 1.2=second token of
         /// first block), or a more complex system like an XPath expression.
         /// </remarks>
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         /// <summary>
         /// The tagged forms.
@@ -47,9 +47,9 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins: <c>fr.tag</c>=tag if any.</returns>
-        public IEnumerable<DataPin> GetDataPins(IItem item = null)
+        public IEnumerable<DataPin> GetDataPins(IItem? item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 new StandardDataPinTextFilter());
 
             // fr.tot-count
@@ -110,7 +110,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[LingTags]");
 

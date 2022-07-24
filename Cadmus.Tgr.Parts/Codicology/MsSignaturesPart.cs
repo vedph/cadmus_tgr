@@ -38,9 +38,9 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <c>tag-TAG-count</c>, <c>library</c> (filtered, with digits),
         /// <c>city</c> (filtered).
         /// </returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 DataPinHelper.DefaultFilter);
 
             builder.Set("tot", Signatures?.Count ?? 0, false);
@@ -98,7 +98,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[MsSignatures]");
 

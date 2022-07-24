@@ -8,12 +8,12 @@
         /// <summary>
         /// Gets or sets the tag.
         /// </summary>
-        public string Tag { get; set; }
+        public string? Tag { get; set; }
 
         /// <summary>
         /// Gets or sets the note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Converts to string.
@@ -23,7 +23,7 @@
         /// </returns>
         public override string ToString()
         {
-            return $"{Tag}: {(Note?.Length > 80? Note.Substring(0, 80) + "..." : Note)}";
+            return $"{Tag}: {(Note?.Length > 80? Note[..80] + "..." : Note)}";
         }
     }
 }

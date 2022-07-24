@@ -21,7 +21,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the history.
         /// </summary>
-        public string History { get; set; }
+        public string? History { get; set; }
 
         /// <summary>
         /// Gets or sets the owners.
@@ -31,7 +31,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the subscription.
         /// </summary>
-        public MsSubscription Subscription { get; set; }
+        public MsSubscription? Subscription { get; set; }
 
         /// <summary>
         /// Gets or sets the annotations.
@@ -56,9 +56,9 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// to access further data.</param>
         /// <returns>The pins: multiple pins with key <c>area</c>,
         /// <c>owner</c> (both filtered, with digits).</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 new StandardDataPinTextFilter());
 
             if (Provenances?.Count > 0)
@@ -103,15 +103,15 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[MsHistory]");
 
             if (Provenances?.Count > 0)
             {
                 sb.Append(' ')
-                  .Append(string.Join("; ", from p in Provenances
-                                            select p.ToString()));
+                  .AppendJoin("; ", from p in Provenances
+                                    select p.ToString());
             }
 
             return sb.ToString();

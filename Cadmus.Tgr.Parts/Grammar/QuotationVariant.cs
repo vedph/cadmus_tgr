@@ -11,7 +11,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the lemma.
         /// </summary>
-        public string Lemma { get; set; }
+        public string? Lemma { get; set; }
 
         /// <summary>
         /// Gets or sets the entry type.
@@ -21,7 +21,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// <summary>
         /// Gets or sets the entry text value.
         /// </summary>
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the witnesses reporting this variant.

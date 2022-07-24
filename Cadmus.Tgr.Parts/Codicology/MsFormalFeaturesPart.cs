@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using Cadmus.Core;
 using Fusi.Tools.Config;
@@ -34,9 +33,9 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// to access further data.</param>
         /// <returns>The pins: <c>tot-count</c> and a collection of pins with
         /// these keys: <c>hand-id</c>.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new();
 
             builder.Set("tot", Features?.Count ?? 0, false);
 
@@ -75,7 +74,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[MsFormalFeatures]");
 

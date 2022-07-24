@@ -32,10 +32,9 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
-            DataPinBuilder builder = new DataPinBuilder(
-                new StandardDataPinTextFilter());
+            DataPinBuilder builder = new(new StandardDataPinTextFilter());
 
             // tot-count
             builder.Set("tot", Contents?.Count ?? 0, false);
@@ -83,7 +82,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[MsContents]");
 

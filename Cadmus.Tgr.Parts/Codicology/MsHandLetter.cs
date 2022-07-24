@@ -8,18 +8,18 @@
         /// <summary>
         /// Gets or sets the letter or other symbol being described.
         /// </summary>
-        public string Letter { get; set; }
+        public string? Letter { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or sets the optional image identifier. This is the prefix
         /// shared by any number of image resources representing this item.
         /// </summary>
-        public string ImageId { get; set; }
+        public string? ImageId { get; set; }
 
         /// <summary>
         /// Converts to string.
@@ -31,7 +31,7 @@
         {
             return $"{Letter}: " +
                 (Description?.Length > 60
-                ? Description.Substring(0, 60) + "..."
+                ? Description[..60] + "..."
                 : Description);
         }
     }

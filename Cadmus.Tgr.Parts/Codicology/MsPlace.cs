@@ -14,7 +14,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// Gets or sets the geographical area. This is the top-level geographical
         /// indication in the hierarchy further specified by <see cref="Address"/>.
         /// </summary>
-        public string Area { get; set; }
+        public string? Area { get; set; }
 
         /// <summary>
         /// Gets or sets the optional address inside the area. This is a
@@ -23,17 +23,17 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// Components are separated by comma. For instance, the area might
         /// be "France", and the address "Lyon, Bibliothéque Civique").
         /// </summary>
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         /// <summary>
         /// Gets or sets the city.
         /// </summary>
-        public string City { get; set; }
+        public string? City { get; set; }
 
         /// <summary>
         /// Gets or sets the site inside the city.
         /// </summary>
-        public string Site { get; set; }
+        public string? Site { get; set; }
 
         /// <summary>
         /// Gets or sets the rank: 0=not specified, else a value representing
@@ -62,7 +62,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[MsPlace]");
 
@@ -70,7 +70,7 @@ namespace Cadmus.Tgr.Parts.Codicology
 
             if (!string.IsNullOrEmpty(Address))
             {
-                if (sb[sb.Length - 1] != ' ') sb.Append(", ");
+                if (sb[^1] != ' ') sb.Append(", ");
                 sb.Append(Address);
             }
 
