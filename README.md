@@ -4,6 +4,9 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 2.1.1
+
+- 2022-07-29: added `Note` to `VarQuotation`, both as its direct child and as child of `QuotationVariant`.
 - 2022-07-24: made projects nullable.
 
 ### 2.1.0

@@ -19,7 +19,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         public ApparatusEntryType Type { get; set; }
 
         /// <summary>
-        /// Gets or sets the entry text value.
+        /// Gets or sets the entry text value (zero for deletions).
         /// </summary>
         public string? Value { get; set; }
 
@@ -33,6 +33,11 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// this variant.
         /// </summary>
         public List<LocAnnotatedValue> Authors { get; set; }
+
+        /// <summary>
+        /// Gets or sets an optional note.
+        /// </summary>
+        public string? Note { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuotationVariant"/> class.

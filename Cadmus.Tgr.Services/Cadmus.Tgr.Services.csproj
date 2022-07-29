@@ -11,11 +11,11 @@
     <Description>Cadmus TGR project services.</Description>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageTags>Cadmus;TGR</PackageTags>
-    <FileVersion>2.1.0</FileVersion>
-    <AssemblyVersion>2.1.0</AssemblyVersion>
+    <FileVersion>2.1.1</FileVersion>
+    <AssemblyVersion>2.1.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -29,6 +29,11 @@ namespace Cadmus.Tgr.Parts.Grammar
         public string? Location { get; set; }
 
         /// <summary>
+        /// Gets or sets an optional note.
+        /// </summary>
+        public string? Note { get; set; }
+
+        /// <summary>
         /// Gets or sets further occurrences of the same quotation in other works.
         /// </summary>
         public List<QuotationParallel> Parallels { get; set; }
