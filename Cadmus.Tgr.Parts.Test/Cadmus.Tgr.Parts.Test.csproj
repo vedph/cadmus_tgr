@@ -17,11 +17,11 @@
 
     <NeutralLanguage>en-US</NeutralLanguage>
 
-    <Version>2.1.1</Version>
+    <Version>2.1.2</Version>
 
-    <FileVersion>2.1.1</FileVersion>
+    <FileVersion>2.1.2</FileVersion>
 
-    <AssemblyVersion>2.1.1</AssemblyVersion>
+    <AssemblyVersion>2.1.2</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

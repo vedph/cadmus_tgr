@@ -19,7 +19,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
     public sealed class LingTagsLayerFragmentSeeder : FragmentSeederBase,
         IConfigurable<LingTagsLayerFragmentSeederOptions>
     {
-        private LingTagsLayerFragmentSeederOptions _options;
+        private LingTagsLayerFragmentSeederOptions? _options;
 
         /// <summary>
         /// Gets the type of the fragment.
@@ -46,7 +46,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
                     f => f.Random.Bool(0.2F)? f.Lorem.Sentence() : null)
                 .Generate();
 
-            if (_options?.Entries?.Length > 0)
+            if (_options?.Entries?.Count > 0)
             {
                 for (int i = 0; i < Randomizer.Seed.Next(1, 3 + 1); i++)
                 {
@@ -97,6 +97,6 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
     /// </summary>
     public sealed class LingTagsLayerFragmentSeederOptions
     {
-        public ThesaurusEntry[] Entries { get; set; }
+        public IList<ThesaurusEntry>? Entries { get; set; }
     }
 }
