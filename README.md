@@ -4,6 +4,10 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 2.1.3
+
+- 2022-08-18: updated packages.
+
 ### 2.1.2
 
 - 2022-07-30: added `Note` to `QuotationParallel`.
