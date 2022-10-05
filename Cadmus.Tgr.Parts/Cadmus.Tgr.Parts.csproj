@@ -10,15 +10,15 @@
     <Product>Cadmus</Product>
     <Description>Cadmus TGR parts.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>2.1.3</Version>
+    <Version>2.1.4</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <Copyright>by Daniele Fusi</Copyright>
     <PackageTags>Cadmus;TGR parts</PackageTags>
-    <FileVersion>2.1.3</FileVersion>
-    <AssemblyVersion>2.1.3</AssemblyVersion>
+    <FileVersion>2.1.4</FileVersion>
+    <AssemblyVersion>2.1.4</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cadmus.Core" Version="4.0.3" />
+    <PackageReference Include="Cadmus.Core" Version="4.0.4" />
     <PackageReference Include="Cadmus.General.Parts" Version="2.1.0" />
     <PackageReference Include="Cadmus.Philology.Parts" Version="4.0.0" />
     <PackageReference Include="Cadmus.Refs.Bricks" Version="3.0.1" />
