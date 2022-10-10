@@ -4,6 +4,10 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 2.2.0
+
+- 2022-10-10: refactored services to be used both by API and CLI. This makes the `Cadmus.Cli.Plugin.Tgr` project obsolete.
+
 ### 2.1.5
 
 - 2022-10-10: updated packages.

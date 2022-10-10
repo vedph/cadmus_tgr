@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
@@ -10,15 +10,15 @@
     <Product>Cadmus</Product>
     <Description>Cadmus TGR parts.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>2.1.5</Version>
+    <Version>2.2.0</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <Copyright>by Daniele Fusi</Copyright>
     <PackageTags>Cadmus;TGR parts</PackageTags>
-    <FileVersion>2.1.5</FileVersion>
-    <AssemblyVersion>2.1.5</AssemblyVersion>
+    <FileVersion>2.2.0</FileVersion>
+    <AssemblyVersion>2.2.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cadmus.Core" Version="4.0.5" />
+    <PackageReference Include="Cadmus.Core" Version="4.1.0" />
     <PackageReference Include="Cadmus.General.Parts" Version="2.1.0" />
     <PackageReference Include="Cadmus.Philology.Parts" Version="4.0.0" />
     <PackageReference Include="Cadmus.Refs.Bricks" Version="3.0.1" />
