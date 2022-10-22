@@ -1,5 +1,4 @@
-﻿using Cadmus.Cli.Core;
-using Cadmus.Core;
+﻿using Cadmus.Core;
 using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
 using Cadmus.General.Parts;
@@ -12,13 +11,13 @@ using System.Reflection;
 namespace Cadmus.Cli.Plugin.Tgr
 {
     /// <summary>
-    /// CLI Cadmus repository provider for Tgr.
-    /// Tag: <c>cli-repository-provider.tgr</c>.
+    /// Cadmus repository provider for Tgr.
+    /// Tag: <c>repository-provider.tgr</c>.
     /// </summary>
-    /// <seealso cref="ICliCadmusRepositoryProvider" />
-    [Tag("cli-repository-provider.tgr")]
+    /// <seealso cref="IRepositoryProvider" />
+    [Tag("repository-provider.tgr")]
     public sealed class TgrCliCadmusRepositoryProvider :
-        ICliCadmusRepositoryProvider
+        IRepositoryProvider
     {
         private readonly IPartTypeProvider _partTypeProvider;
 
@@ -48,23 +47,30 @@ namespace Cadmus.Cli.Plugin.Tgr
         }
 
         /// <summary>
+        /// Gets the part type provider.
+        /// </summary>
+        /// <returns>part type provider</returns>
+        public IPartTypeProvider GetPartTypeProvider()
+        {
+            return _partTypeProvider;
+        }
+
+        /// <summary>
         /// Creates the repository.
         /// </summary>
-        /// <param name="database">The database.</param>
         /// <returns>Repository.</returns>
         /// <exception cref="ArgumentNullException">database</exception>
-        public ICadmusRepository CreateRepository(string database)
+        public ICadmusRepository CreateRepository()
         {
-            if (database == null)
-                throw new ArgumentNullException(nameof(database));
-
             // create the repository (no need to use container here)
             MongoCadmusRepository repository =
                 new(_partTypeProvider, new StandardItemSortKeyBuilder());
 
             repository.Configure(new MongoCadmusRepositoryOptions
             {
-                ConnectionString = string.Format(ConnectionString!, database)
+                ConnectionString = ConnectionString ??
+                    throw new InvalidOperationException(
+                    "No connection string set for IRepositoryProvider implementation")
             });
 
             return repository;

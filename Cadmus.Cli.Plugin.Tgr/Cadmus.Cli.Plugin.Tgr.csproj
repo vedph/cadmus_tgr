@@ -20,10 +20,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cadmus.Cli.Core" Version="4.1.0" />
+    <PackageReference Include="Cadmus.Cli.Core" Version="4.1.2" />
     <PackageReference Include="Cadmus.Mongo" Version="4.1.0" />
-    <PackageReference Include="Cadmus.Seed.General.Parts" Version="2.1.0" />
-    <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="4.0.0" />
+    <PackageReference Include="Cadmus.Seed.General.Parts" Version="2.1.1" />
+    <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="4.0.1" />
     <PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="1.0.3" />
   </ItemGroup>
 
