@@ -22,7 +22,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                 Title = "Test Item",
                 SortKey = ""
             };
-            return (MsPlacesPart)seeder.GetPart(item, null, null);
+            return (MsPlacesPart)seeder.GetPart(item, null, null)!;
         }
 
         private static MsPlacesPart GetEmptyPart()
@@ -90,7 +90,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
 
             Assert.Equal(11, pins.Count);
 
-            DataPin pin = pins.Find(p => p.Name == "tot-count");
+            DataPin? pin = pins.Find(p => p.Name == "tot-count");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
             Assert.Equal("3", pin.Value);

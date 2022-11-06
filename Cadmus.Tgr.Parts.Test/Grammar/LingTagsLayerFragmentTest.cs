@@ -49,9 +49,9 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
         [Fact]
         public void Fragment_Has_Tag()
         {
-            TagAttribute attr = typeof(LingTagsLayerFragment).GetTypeInfo()
+            TagAttribute? attr = typeof(LingTagsLayerFragment).GetTypeInfo()
                 .GetCustomAttribute<TagAttribute>();
-            string typeId = attr != null ? attr.Tag : GetType().FullName;
+            string? typeId = attr != null ? attr.Tag : GetType().FullName;
             Assert.NotNull(typeId);
             Assert.StartsWith(PartBase.FR_PREFIX, typeId);
         }
@@ -67,7 +67,6 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
 
             Assert.Equal(fragment.Location, fragment2.Location);
             Assert.Equal(3, fragment.Forms.Count);
-            // TODO members
         }
 
         [Fact]
@@ -79,7 +78,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
             Assert.Equal(7, pins.Count);
 
             // fr.tot-count
-            DataPin pin = pins.Find(p => p.Name == "fr.tot-count");
+            DataPin? pin = pins.Find(p => p.Name == "fr.tot-count");
             Assert.NotNull(pin);
             Assert.Equal("3", pin.Value);
 

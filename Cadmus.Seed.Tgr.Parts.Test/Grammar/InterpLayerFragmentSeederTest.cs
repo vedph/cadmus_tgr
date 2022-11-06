@@ -1,4 +1,5 @@
-﻿using Cadmus.Core.Layers;
+﻿using Cadmus.Core;
+using Cadmus.Core.Layers;
 using Cadmus.Seed.Tgr.Parts.Grammar;
 using Cadmus.Tgr.Parts.Grammar;
 using Fusi.Tools.Config;
@@ -21,7 +22,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         public void TypeHasTagAttribute()
         {
             Type t = typeof(InterpolationsLayerFragmentSeeder);
-            TagAttribute attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
+            TagAttribute? attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
             Assert.NotNull(attr);
             Assert.Equal("seed.fr.it.vedph.tgr.interpolations", attr.Tag);
         }
@@ -29,20 +30,20 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         [Fact]
         public void GetFragmentType_Ok()
         {
-            InterpolationsLayerFragmentSeeder seeder = new InterpolationsLayerFragmentSeeder();
+            InterpolationsLayerFragmentSeeder seeder = new();
             Assert.Equal(typeof(InterpolationsLayerFragment), seeder.GetFragmentType());
         }
 
         [Fact]
         public void Seed_Ok()
         {
-            InterpolationsLayerFragmentSeeder seeder = new InterpolationsLayerFragmentSeeder();
+            InterpolationsLayerFragmentSeeder seeder = new();
 
-            ITextLayerFragment fragment = seeder.GetFragment(null, "1.1", "alpha");
+            ITextLayerFragment? fragment = seeder.GetFragment(new Item(), "1.1", "alpha");
 
             Assert.NotNull(fragment);
 
-            InterpolationsLayerFragment fr = fragment as InterpolationsLayerFragment;
+            InterpolationsLayerFragment? fr = fragment as InterpolationsLayerFragment;
             Assert.NotNull(fr);
 
             Assert.Equal("1.1", fr.Location);

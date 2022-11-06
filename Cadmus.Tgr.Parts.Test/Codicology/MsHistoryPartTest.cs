@@ -22,7 +22,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                 Title = "Test Item",
                 SortKey = ""
             };
-            return (MsHistoryPart)seeder.GetPart(item, null, null);
+            return (MsHistoryPart)seeder.GetPart(item, null, null)!;
         }
 
         private static MsHistoryPart GetEmptyPart()
@@ -79,7 +79,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
 
             Assert.Equal(4, pins.Count);
 
-            DataPin pin = pins.Find(p => p.Name == "area" && p.Value == "italy");
+            DataPin? pin = pins.Find(p => p.Name == "area" && p.Value == "italy");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
 

@@ -16,7 +16,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
     [Tag("seed.it.vedph.tgr.ms-scripts")]
     public sealed class MsScriptsPartSeeder : PartSeederBase
     {
-        private List<MsHandLetter> GetLetters(int count)
+        private static List<MsHandLetter> GetLetters(int count)
         {
             List<MsHandLetter> letters = new();
             for (int n = 1; n <= count; n++)
@@ -32,7 +32,7 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
             return letters;
         }
 
-        private List<MsHand> GetHands(int count)
+        private static List<MsHand> GetHands(int count)
         {
             List<MsHand> hands = new();
             for (int n = 1; n <= count; n++)
@@ -71,8 +71,8 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
         /// for layer parts, which need to seed a set of fragments.</param>
         /// <returns>A new part.</returns>
         /// <exception cref="ArgumentNullException">item or factory</exception>
-        public override IPart GetPart(IItem item, string roleId,
-            PartSeederFactory factory)
+        public override IPart? GetPart(IItem item, string? roleId,
+            PartSeederFactory? factory)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item));

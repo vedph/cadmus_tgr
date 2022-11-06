@@ -61,7 +61,6 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
             Assert.Equal(part.UserId, part2.UserId);
 
             Assert.Equal(2, part.Contents.Count);
-            // TODO: details
         }
 
         [Fact]
@@ -87,7 +86,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
 
             Assert.Equal(7, pins.Count);
 
-            DataPin pin = pins.Find(p => p.Name == "tot-count");
+            DataPin? pin = pins.Find(p => p.Name == "tot-count");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
             Assert.Equal("3", pin.Value);

@@ -22,7 +22,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                 Title = "Test Item",
                 SortKey = ""
             };
-            return (MsFormalFeaturesPart)seeder.GetPart(item, null, null);
+            return (MsFormalFeaturesPart)seeder.GetPart(item, null, null)!;
         }
 
         [Fact]
@@ -71,7 +71,6 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
             };
             for (int n = 1; n <= 3; n++)
             {
-                bool even = n % 2 == 0;
                 part.Features.Add(new MsFormalFeature
                 {
                     HandId = $"h{n}"
@@ -82,7 +81,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
 
             Assert.Equal(4, pins.Count);
 
-            DataPin pin = pins.Find(p => p.Name == "tot-count");
+            DataPin? pin = pins.Find(p => p.Name == "tot-count");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
             Assert.Equal("3", pin.Value);

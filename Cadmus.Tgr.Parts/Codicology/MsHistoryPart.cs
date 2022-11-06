@@ -63,7 +63,7 @@ namespace Cadmus.Tgr.Parts.Codicology
 
             if (Provenances?.Count > 0)
             {
-                builder.AddValues("area", Provenances.Select(p => p.Area),
+                builder.AddValues("area", Provenances.Select(p => p.Area!),
                     filter: true, filterOptions: true);
             }
 

@@ -22,7 +22,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                 Title = "Test Item",
                 SortKey = ""
             };
-            return (MsUnitsPart)seeder.GetPart(item, null, null);
+            return (MsUnitsPart)seeder.GetPart(item, null, null)!;
         }
 
         [Fact]
@@ -77,7 +77,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
                     Material = even ? "paper" : "parchment",
                     Palimpsests = even
                         ? new List<MsPalimpsest>(new[] { new MsPalimpsest() })
-                        : null,
+                        : new List<MsPalimpsest>(),
                     SheetCount = n * 2,
                     GuardSheetCount = n
                 });
@@ -87,7 +87,7 @@ namespace Cadmus.Tgr.Parts.Test.Codicology
 
             Assert.Equal(10, pins.Count);
 
-            DataPin pin = pins.Find(p => p.Name == "tot-count");
+            DataPin? pin = pins.Find(p => p.Name == "tot-count");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
             Assert.Equal("3", pin.Value);

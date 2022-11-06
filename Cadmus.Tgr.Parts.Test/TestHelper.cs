@@ -30,7 +30,7 @@ namespace Cadmus.Tgr.Parts.Test
             if (json == null)
                 throw new ArgumentNullException(nameof(json));
 
-            return JsonSerializer.Deserialize<T>(json, _options);
+            return JsonSerializer.Deserialize<T>(json, _options)!;
         }
 
         public static string SerializeFragment(ITextLayerFragment fr)
@@ -47,7 +47,7 @@ namespace Cadmus.Tgr.Parts.Test
             if (json == null)
                 throw new ArgumentNullException(nameof(json));
 
-            return JsonSerializer.Deserialize<T>(json, _options);
+            return JsonSerializer.Deserialize<T>(json, _options)!;
         }
 
         public static void AssertPinIds(IPart part, DataPin pin)

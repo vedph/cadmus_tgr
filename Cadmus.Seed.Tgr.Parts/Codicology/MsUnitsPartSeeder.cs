@@ -83,7 +83,6 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
 
             for (int n = 1; n <= count; n++)
             {
-                bool even = n % 2 == 0;
                 rulings.Add(new Faker<MsRuling>()
                     .RuleFor(r => r.Manner, f => f.PickRandom("ink", "lead-pt"))
                     .RuleFor(r => r.System, f => f.PickRandom("direct", "transmitted"))
@@ -104,8 +103,8 @@ namespace Cadmus.Seed.Tgr.Parts.Codicology
         /// for layer parts, which need to seed a set of fragments.</param>
         /// <returns>A new part.</returns>
         /// <exception cref="ArgumentNullException">item</exception>
-        public override IPart GetPart(IItem item, string roleId,
-            PartSeederFactory factory)
+        public override IPart? GetPart(IItem item, string? roleId,
+            PartSeederFactory? factory)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item));

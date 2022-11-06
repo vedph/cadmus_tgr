@@ -1,25 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+	<Nullable>enable</Nullable>
     <TargetFramework>net6.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <Authors>Daniele Fusi</Authors>
-
     <Company>Fusi</Company>
-
     <Product>Cadmus</Product>
-
     <NeutralLanguage>en-US</NeutralLanguage>
-
     <Copyright>By Daniele Fusi 2020</Copyright>
-
-    <Version>2.2.1</Version>
-
-    <FileVersion>2.2.1</FileVersion>
-
-    <AssemblyVersion>2.2.1</AssemblyVersion>
+    <Version>2.3.0</Version>
+    <FileVersion>2.3.0</FileVersion>
+    <AssemblyVersion>2.3.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,7 +32,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="3.1.2">
+    <PackageReference Include="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

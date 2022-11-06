@@ -25,7 +25,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <summary>
         /// Gets or sets the suffix, containing 0-2 lowercase letters.
         /// </summary>
-        public string S { get; set; }
+        public string? S { get; set; }
 
         /// <summary>
         /// Gets or sets the line number.

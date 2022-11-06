@@ -15,7 +15,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
         {
             var seeder = new VarQuotationsLayerFragmentSeeder();
             return (VarQuotationsLayerFragment)
-                seeder.GetFragment(null, "1.2", "exemplum fictum");
+                seeder.GetFragment(new Item(), "1.2", "exemplum fictum")!;
         }
 
         private static VarQuotationsLayerFragment GetEmptyFragment()
@@ -47,9 +47,9 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
         [Fact]
         public void Fragment_Has_Tag()
         {
-            TagAttribute attr = typeof(VarQuotationsLayerFragment).GetTypeInfo()
+            TagAttribute? attr = typeof(VarQuotationsLayerFragment).GetTypeInfo()
                 .GetCustomAttribute<TagAttribute>();
-            string typeId = attr != null ? attr.Tag : GetType().FullName;
+            string? typeId = attr != null ? attr.Tag : GetType().FullName;
             Assert.NotNull(typeId);
             Assert.StartsWith(PartBase.FR_PREFIX, typeId);
         }
@@ -77,7 +77,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
             Assert.Equal(10, pins.Count);
 
             // fr-tot-count
-            DataPin pin = pins.Find(p => p.Name == PartBase.FR_PREFIX + "tot-count");
+            DataPin? pin = pins.Find(p => p.Name == PartBase.FR_PREFIX + "tot-count");
             Assert.NotNull(pin);
             Assert.Equal("3", pin.Value);
 

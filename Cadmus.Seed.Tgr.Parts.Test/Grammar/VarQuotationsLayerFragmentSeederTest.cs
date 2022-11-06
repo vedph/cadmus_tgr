@@ -24,7 +24,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         public void TypeHasTagAttribute()
         {
             Type t = typeof(VarQuotationsLayerFragmentSeeder);
-            TagAttribute attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
+            TagAttribute? attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
             Assert.NotNull(attr);
             Assert.Equal("seed.fr.it.vedph.tgr.var-quotations", attr.Tag);
         }
@@ -32,20 +32,20 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         [Fact]
         public void GetFragmentType_Ok()
         {
-            VarQuotationsLayerFragmentSeeder seeder = new VarQuotationsLayerFragmentSeeder();
+            VarQuotationsLayerFragmentSeeder seeder = new();
             Assert.Equal(typeof(VarQuotationsLayerFragment), seeder.GetFragmentType());
         }
 
         [Fact]
         public void Seed_Ok()
         {
-            VarQuotationsLayerFragmentSeeder seeder = new VarQuotationsLayerFragmentSeeder();
+            VarQuotationsLayerFragmentSeeder seeder = new();
 
-            ITextLayerFragment fragment = seeder.GetFragment(_item, "1.1", "alpha");
+            ITextLayerFragment? fragment = seeder.GetFragment(_item, "1.1", "alpha");
 
             Assert.NotNull(fragment);
 
-            VarQuotationsLayerFragment fr = fragment as VarQuotationsLayerFragment;
+            VarQuotationsLayerFragment? fr = fragment as VarQuotationsLayerFragment;
             Assert.NotNull(fr);
 
             Assert.Equal("1.1", fr.Location);

@@ -4,6 +4,10 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 2.3.0
+
+- 2022-11-06: refactored projects for nullability check.
+
 ### 2.2.1
 
 - 2022-10-22: updated packages and removed CLI project.

@@ -24,7 +24,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// simple token-based coordinates system (e.g. 1.2=second token of
         /// first block), or a more complex system like an XPath expression.
         /// </remarks>
-        public string? Location { get; set; }
+        public string Location { get; set; }
 
         /// <summary>
         /// The tagged forms.
@@ -37,6 +37,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </summary>
         public LingTagsLayerFragment()
         {
+            Location = "";
             Forms = new List<LingTaggedForm>();
         }
 
@@ -72,7 +73,7 @@ namespace Cadmus.Tgr.Parts.Grammar
                     if (form.Tags?.Count > 0)
                     {
                         builder.AddValues(PartBase.FR_PREFIX + "tag",
-                            form.Tags.Select(t => t.Value));
+                            form.Tags.Select(t => t.Value!));
                     }
                 }
             }

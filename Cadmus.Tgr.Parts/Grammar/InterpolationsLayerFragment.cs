@@ -23,7 +23,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// simple token-based coordinates system (e.g. 1.2=second token of
         /// first block), or a more complex system like an XPath expression.
         /// </remarks>
-        public string? Location { get; set; }
+        public string Location { get; set; }
 
         /// <summary>
         /// Gets or sets the entries.
@@ -36,6 +36,7 @@ namespace Cadmus.Tgr.Parts.Grammar
         /// </summary>
         public InterpolationsLayerFragment()
         {
+            Location = "";
             Interpolations = new List<Interpolation>();
         }
 

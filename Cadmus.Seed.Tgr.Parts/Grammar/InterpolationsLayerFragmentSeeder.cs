@@ -79,7 +79,7 @@ namespace Cadmus.Seed.Tgr.Parts.Grammar
         /// <returns>A new fragment.</returns>
         /// <exception cref="ArgumentNullException">location or
         /// baseText</exception>
-        public override ITextLayerFragment GetFragment(
+        public override ITextLayerFragment? GetFragment(
             IItem item, string location, string baseText)
         {
             if (location == null)

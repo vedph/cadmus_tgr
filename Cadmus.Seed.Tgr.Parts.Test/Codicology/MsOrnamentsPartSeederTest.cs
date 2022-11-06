@@ -25,7 +25,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Codicology
         public void TypeHasTagAttribute()
         {
             Type t = typeof(MsOrnamentsPartSeeder);
-            TagAttribute attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
+            TagAttribute? attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
             Assert.NotNull(attr);
             Assert.Equal("seed.it.vedph.tgr.ms-ornaments", attr.Tag);
         }
@@ -33,14 +33,14 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Codicology
         [Fact]
         public void Seed_Ok()
         {
-            MsOrnamentsPartSeeder seeder = new MsOrnamentsPartSeeder();
+            MsOrnamentsPartSeeder seeder = new();
             seeder.SetSeedOptions(_seedOptions);
 
-            IPart part = seeder.GetPart(_item, null, _factory);
+            IPart? part = seeder.GetPart(_item, null, _factory);
 
             Assert.NotNull(part);
 
-            MsOrnamentsPart p = part as MsOrnamentsPart;
+            MsOrnamentsPart? p = part as MsOrnamentsPart;
             Assert.NotNull(p);
 
             TestHelper.AssertPartMetadata(p);

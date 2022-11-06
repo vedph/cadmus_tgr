@@ -23,7 +23,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
                 Title = "Test Item",
                 SortKey = ""
             };
-            return (AvailableWitnessesPart)seeder.GetPart(item, null, null);
+            return (AvailableWitnessesPart)seeder.GetPart(item, null, null)!;
         }
 
         private static AvailableWitnessesPart GetEmptyPart()
@@ -91,7 +91,7 @@ namespace Cadmus.Tgr.Parts.Test.Grammar
 
             Assert.Equal(4, pins.Count);
 
-            DataPin pin = pins.Find(p => p.Name == "tot-count");
+            DataPin? pin = pins.Find(p => p.Name == "tot-count");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin);
             Assert.Equal("3", pin.Value);

@@ -23,7 +23,7 @@ namespace Cadmus.Tgr.Services
         /// <summary>
         /// The connection string.
         /// </summary>
-        public string? ConnectionString { get; set; }
+        public string ConnectionString { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardRepositoryProvider"/>
@@ -32,6 +32,7 @@ namespace Cadmus.Tgr.Services
         /// <exception cref="ArgumentNullException">configuration</exception>
         public TgrRepositoryProvider()
         {
+            ConnectionString = "";
             TagAttributeToTypeMap map = new();
             map.Add(new[]
             {

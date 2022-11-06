@@ -20,14 +20,14 @@ namespace Cadmus.Seed.Tgr.Parts.Test
             if (name == null) throw new ArgumentNullException(nameof(name));
 
             return Assembly.GetExecutingAssembly().GetManifestResourceStream(
-                    $"Cadmus.Seed.Tgr.Parts.Test.Assets.{name}");
+                    $"Cadmus.Seed.Tgr.Parts.Test.Assets.{name}")!;
         }
 
         static public string LoadResourceText(string name)
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
 
-            using (StreamReader reader = new StreamReader(
+            using (StreamReader reader = new(
                 GetResourceStream(name),
                 Encoding.UTF8))
             {
@@ -38,7 +38,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test
         static public PartSeederFactory GetFactory()
         {
             // map
-            TagAttributeToTypeMap map = new TagAttributeToTypeMap();
+            TagAttributeToTypeMap map = new();
             map.Add(new[]
             {
                 // Cadmus.Core
@@ -48,7 +48,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test
             });
 
             // container
-            Container container = new Container();
+            Container container = new();
             PartSeederFactory.ConfigureServices(
                 container,
                 new StandardPartTypeProvider(map),

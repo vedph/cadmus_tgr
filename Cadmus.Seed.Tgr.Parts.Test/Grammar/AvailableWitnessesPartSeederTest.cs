@@ -25,7 +25,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         public void TypeHasTagAttribute()
         {
             Type t = typeof(AvailableWitnessesPartSeeder);
-            TagAttribute attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
+            TagAttribute? attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
             Assert.NotNull(attr);
             Assert.Equal("seed.it.vedph.tgr.available-witnesses", attr.Tag);
         }
@@ -33,15 +33,14 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         [Fact]
         public void Seed_Ok()
         {
-            AvailableWitnessesPartSeeder seeder =
-                new AvailableWitnessesPartSeeder();
+            AvailableWitnessesPartSeeder seeder = new();
             seeder.SetSeedOptions(_seedOptions);
 
-            IPart part = seeder.GetPart(_item, null, _factory);
+            IPart? part = seeder.GetPart(_item, null, _factory);
 
             Assert.NotNull(part);
 
-            AvailableWitnessesPart p = part as AvailableWitnessesPart;
+            AvailableWitnessesPart? p = part as AvailableWitnessesPart;
             Assert.NotNull(p);
 
             TestHelper.AssertPartMetadata(p);

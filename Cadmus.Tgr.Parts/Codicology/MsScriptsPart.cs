@@ -32,7 +32,7 @@ namespace Cadmus.Tgr.Parts.Codicology
         /// <returns>The pins: <c>tot-count</c> and a collection of pins with
         /// these keys: <c>role</c>, <c>language</c>, <c>type</c>,
         /// <c>hand-id</c>.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem? item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
         {
             DataPinBuilder builder = new();
 
@@ -48,7 +48,8 @@ namespace Cadmus.Tgr.Parts.Codicology
                     builder.AddValue("type", script.Type);
                     if (script.Hands?.Count > 0)
                     {
-                        builder.AddValues("hand-id", script.Hands.Select(h => h.Id));
+                        builder.AddValues("hand-id",
+                            script.Hands.Select(h => h.Id)!);
                     }
                 }
             }

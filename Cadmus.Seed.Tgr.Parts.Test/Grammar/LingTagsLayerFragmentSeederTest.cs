@@ -28,7 +28,7 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         public void TypeHasTagAttribute()
         {
             Type t = typeof(LingTagsLayerFragmentSeeder);
-            TagAttribute attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
+            TagAttribute? attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
             Assert.NotNull(attr);
             Assert.Equal("seed.fr.it.vedph.tgr.ling-tags", attr.Tag);
         }
@@ -36,40 +36,39 @@ namespace Cadmus.Seed.Tgr.Parts.Test.Grammar
         [Fact]
         public void GetFragmentType_Ok()
         {
-            LingTagsLayerFragmentSeeder seeder = new LingTagsLayerFragmentSeeder();
+            LingTagsLayerFragmentSeeder seeder = new();
             Assert.Equal(typeof(LingTagsLayerFragment), seeder.GetFragmentType());
         }
 
-        private ThesaurusEntry[] LoadThesaurusEntries()
+        private static ThesaurusEntry[] LoadThesaurusEntries()
         {
             return JsonSerializer.Deserialize<ThesaurusEntry[]>(
                 TestHelper.LoadResourceText("TagEntries.json"),
                 new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
-                });
+                })!;
         }
 
         [Fact]
         public void Seed_WithOptions_Ok()
         {
-            LingTagsLayerFragmentSeeder seeder = new LingTagsLayerFragmentSeeder();
+            LingTagsLayerFragmentSeeder seeder = new();
             seeder.SetSeedOptions(_seedOptions);
             seeder.Configure(new LingTagsLayerFragmentSeederOptions
             {
                 Entries = LoadThesaurusEntries()
             });
 
-            ITextLayerFragment fragment = seeder.GetFragment(_item, "1.1", "alpha");
+            ITextLayerFragment? fragment = seeder.GetFragment(_item, "1.1", "alpha");
 
             Assert.NotNull(fragment);
 
-            LingTagsLayerFragment fr = fragment as LingTagsLayerFragment;
+            LingTagsLayerFragment? fr = fragment as LingTagsLayerFragment;
             Assert.NotNull(fr);
 
             Assert.Equal("1.1", fr.Location);
             Assert.Equal(3, fr.Forms.Count);
-            // TODO other assertions...
         }
     }
 }
