@@ -4,6 +4,10 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 3.0.1
+
+- 2022-11-27: updated packages.
+
 ### 3.0.0
 
 - 2022-11-10: upgraded to NET 7.
