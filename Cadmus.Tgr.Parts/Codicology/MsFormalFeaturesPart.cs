@@ -1,98 +1,97 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using Cadmus.Core;
-using Fusi.Tools.Config;
+using Fusi.Tools.Configuration;
 
-namespace Cadmus.Tgr.Parts.Codicology
+namespace Cadmus.Tgr.Parts.Codicology;
+
+/// <summary>
+/// Manuscript's formal features of writing part.
+/// <para>Tag: <c>it.vedph.tgr.ms-formal-features</c>.</para>
+/// </summary>
+[Tag("it.vedph.tgr.ms-formal-features")]
+public sealed class MsFormalFeaturesPart : PartBase
 {
     /// <summary>
-    /// Manuscript's formal features of writing part.
-    /// <para>Tag: <c>it.vedph.tgr.ms-formal-features</c>.</para>
+    /// Gets or sets the entries.
     /// </summary>
-    [Tag("it.vedph.tgr.ms-formal-features")]
-    public sealed class MsFormalFeaturesPart : PartBase
+    public List<MsFormalFeature> Features { get; set; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MsFormalFeaturesPart"/> class.
+    /// </summary>
+    public MsFormalFeaturesPart()
     {
-        /// <summary>
-        /// Gets or sets the entries.
-        /// </summary>
-        public List<MsFormalFeature> Features { get; set; }
+        Features = new List<MsFormalFeature>();
+    }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MsFormalFeaturesPart"/> class.
-        /// </summary>
-        public MsFormalFeaturesPart()
+    /// <summary>
+    /// Get all the key=value pairs (pins) exposed by the implementor.
+    /// </summary>
+    /// <param name="item">The optional item. The item with its parts
+    /// can optionally be passed to this method for those parts requiring
+    /// to access further data.</param>
+    /// <returns>The pins: <c>tot-count</c> and a collection of pins with
+    /// these keys: <c>hand-id</c>.</returns>
+    public override IEnumerable<DataPin> GetDataPins(IItem? item)
+    {
+        DataPinBuilder builder = new();
+
+        builder.Set("tot", Features?.Count ?? 0, false);
+
+        if (Features?.Count > 0)
         {
-            Features = new List<MsFormalFeature>();
+            foreach (MsFormalFeature feature in Features)
+                builder.AddValue("hand-id", feature.HandId);
         }
 
-        /// <summary>
-        /// Get all the key=value pairs (pins) exposed by the implementor.
-        /// </summary>
-        /// <param name="item">The optional item. The item with its parts
-        /// can optionally be passed to this method for those parts requiring
-        /// to access further data.</param>
-        /// <returns>The pins: <c>tot-count</c> and a collection of pins with
-        /// these keys: <c>hand-id</c>.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem? item)
+        return builder.Build(this);
+    }
+
+    /// <summary>
+    /// Gets the definitions of data pins used by the implementor.
+    /// </summary>
+    /// <returns>Data pins definitions.</returns>
+    public override IList<DataPinDefinition> GetDataPinDefinitions()
+    {
+        return new List<DataPinDefinition>(new[]
         {
-            DataPinBuilder builder = new();
+            new DataPinDefinition(DataPinValueType.Integer,
+                "tot-count",
+                "The total count of features."),
+            new DataPinDefinition(DataPinValueType.String,
+                "hand-id",
+                "The hand IDs.",
+                "M")
+        });
+    }
 
-            builder.Set("tot", Features?.Count ?? 0, false);
+    /// <summary>
+    /// Converts to string.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="string" /> that represents this instance.
+    /// </returns>
+    public override string ToString()
+    {
+        StringBuilder sb = new();
 
-            if (Features?.Count > 0)
+        sb.Append("[MsFormalFeatures]");
+
+        if (Features?.Count > 0)
+        {
+            sb.Append(' ');
+            int n = 0;
+            foreach (var entry in Features)
             {
-                foreach (MsFormalFeature feature in Features)
-                    builder.AddValue("hand-id", feature.HandId);
+                if (++n > 3) break;
+                if (n > 1) sb.Append("; ");
+                sb.Append(entry);
             }
-
-            return builder.Build(this);
+            if (Features.Count > 3)
+                sb.Append("...(").Append(Features.Count).Append(')');
         }
 
-        /// <summary>
-        /// Gets the definitions of data pins used by the implementor.
-        /// </summary>
-        /// <returns>Data pins definitions.</returns>
-        public override IList<DataPinDefinition> GetDataPinDefinitions()
-        {
-            return new List<DataPinDefinition>(new[]
-            {
-                new DataPinDefinition(DataPinValueType.Integer,
-                    "tot-count",
-                    "The total count of features."),
-                new DataPinDefinition(DataPinValueType.String,
-                    "hand-id",
-                    "The hand IDs.",
-                    "M")
-            });
-        }
-
-        /// <summary>
-        /// Converts to string.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="string" /> that represents this instance.
-        /// </returns>
-        public override string ToString()
-        {
-            StringBuilder sb = new();
-
-            sb.Append("[MsFormalFeatures]");
-
-            if (Features?.Count > 0)
-            {
-                sb.Append(' ');
-                int n = 0;
-                foreach (var entry in Features)
-                {
-                    if (++n > 3) break;
-                    if (n > 1) sb.Append("; ");
-                    sb.Append(entry);
-                }
-                if (Features.Count > 3)
-                    sb.Append("...(").Append(Features.Count).Append(')');
-            }
-
-            return sb.ToString();
-        }
+        return sb.ToString();
     }
 }
