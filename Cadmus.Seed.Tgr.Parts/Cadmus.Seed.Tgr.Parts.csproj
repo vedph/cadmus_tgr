@@ -12,11 +12,11 @@
     <Description>Cadmus TGR parts seeders.</Description>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>4.0.3</Version>
+    <Version>4.0.4</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageTags>Cadmus;seed;TGR</PackageTags>
-    <FileVersion>4.0.3</FileVersion>
-    <AssemblyVersion>4.0.3</AssemblyVersion>
+    <FileVersion>4.0.4</FileVersion>
+    <AssemblyVersion>4.0.4</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
