@@ -9,15 +9,15 @@
     <Product>Cadmus</Product>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>6.0.0</Version>
-    <FileVersion>6.0.0</FileVersion>
-    <AssemblyVersion>6.0.0</AssemblyVersion>
+    <Version>6.0.1</Version>
+    <FileVersion>6.0.1</FileVersion>
+    <AssemblyVersion>6.0.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
-    <PackageReference Include="xunit" Version="2.4.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="xunit" Version="2.5.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

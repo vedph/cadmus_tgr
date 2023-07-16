@@ -4,6 +4,10 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 6.0.1
+
+- 2023-07-16: updated packages.
+
 ### 6.0.0
 
 - 2023-06-22: updated packages and removed MySql dependencies.
