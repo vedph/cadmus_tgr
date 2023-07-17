@@ -9,10 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadmus.Tgr.Parts.Test", "Ca
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{78504CE7-ECB1-4D14-833D-B42E649FFCB4}"
 	ProjectSection(SolutionItems) = preProject
+		Cli.ps1 = Cli.ps1
 		Pack.bat = Pack.bat
 		Push.bat = Push.bat
-		README.md = README.md
 		PushLocal.bat = PushLocal.bat
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadmus.Tgr.Services", "Cadmus.Tgr.Services\Cadmus.Tgr.Services.csproj", "{355174BE-A5F5-4F06-8406-532E5AD8D1B8}"
