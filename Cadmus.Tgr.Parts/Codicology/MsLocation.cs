@@ -7,7 +7,8 @@ namespace Cadmus.Tgr.Parts.Codicology;
 /// The location includes a number (either Arabic or Roman, always uppercase)
 /// plus 0, 1 or 2 lowercase letters, where <c>r</c>=recto, <c>v</c>=verso,
 /// <c>rv</c>=both, while the first letters of the alphabet represent
-/// columns (<c>a</c>=1st column etc.).
+/// columns (<c>a</c>=1st column etc.). If the location refers to pages rather
+/// than to folia, it ends with <c>%</c>.
 /// </summary>
 public class MsLocation
 {
@@ -33,6 +34,13 @@ public class MsLocation
     public int L { get; set; }
 
     /// <summary>
+    /// Gets or sets a value indicating whether this <see cref="MsLocation"/>
+    /// refers to folia (false) or pages (true).
+    /// </summary>
+    /// <value><c>true</c> if pages; otherwise, <c>false</c>.</value>
+    public bool P { get; set; }
+
+    /// <summary>
     /// Converts to string.
     /// </summary>
     /// <returns>
@@ -44,6 +52,7 @@ public class MsLocation
         sb.Append(N);
         if (!string.IsNullOrEmpty(S)) sb.Append(S);
         if (L > 0) sb.Append(L);
+        if (P) sb.Append('%');
         return sb.ToString();
     }
 }

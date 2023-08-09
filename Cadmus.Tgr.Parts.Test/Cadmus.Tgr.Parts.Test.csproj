@@ -9,13 +9,13 @@
     <Product>Cadmus</Product>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>6.0.1</Version>
-    <FileVersion>6.0.1</FileVersion>
-    <AssemblyVersion>6.0.1</AssemblyVersion>
+    <Version>6.1.0</Version>
+    <FileVersion>6.1.0</FileVersion>
+    <AssemblyVersion>6.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.0" />
     <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
       <PrivateAssets>all</PrivateAssets>

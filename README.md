@@ -4,6 +4,12 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 6.1.0
+
+- 2023-08-09:
+  - added `P` to `MsLocation`.
+  - updated packages.
+
 ### 6.0.1
 
 - 2023-07-16: updated packages.
