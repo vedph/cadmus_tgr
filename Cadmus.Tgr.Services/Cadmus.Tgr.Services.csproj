@@ -11,11 +11,11 @@
     <Description>Cadmus TGR project services.</Description>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>6.1.1</Version>
+    <Version>6.1.2</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageTags>Cadmus;TGR</PackageTags>
-    <FileVersion>6.1.1</FileVersion>
-    <AssemblyVersion>6.1.1</AssemblyVersion>
+    <FileVersion>6.1.2</FileVersion>
+    <AssemblyVersion>6.1.2</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,9 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cadmus.Core" Version="6.1.16" />
+    <PackageReference Include="Cadmus.Core" Version="6.1.18" />
     <PackageReference Include="Cadmus.General.Parts" Version="5.0.5" />
-    <PackageReference Include="Cadmus.Mongo" Version="6.1.16" />
+    <PackageReference Include="Cadmus.Mongo" Version="6.1.18" />
     <PackageReference Include="Cadmus.Philology.Parts" Version="7.0.3" />
     <PackageReference Include="Cadmus.Seed.General.Parts" Version="5.0.5" />
     <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="7.0.3" />
