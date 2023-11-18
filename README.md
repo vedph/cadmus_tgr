@@ -1,8 +1,12 @@
-# Cadmus TGR Parts
+﻿# Cadmus TGR Parts
 
 Components for the _Tradizione Grammaticale Romana_ project (here TGR for short) in Cadmus.
 
 ## History
+
+### 7.0.0
+
+- 2023-11-18: ⚠️ Upgraded to .NET 8.
 
 ### 6.1.2
 

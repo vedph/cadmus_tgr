@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 	<Nullable>enable</Nullable>
     <Authors>Daniele Fusi</Authors>
     <Company>Fusi</Company>
@@ -11,11 +11,11 @@
     <Description>Cadmus TGR project services.</Description>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>6.1.2</Version>
+    <Version>7.0.0</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageTags>Cadmus;TGR</PackageTags>
-    <FileVersion>6.1.2</FileVersion>
-    <AssemblyVersion>6.1.2</AssemblyVersion>
+    <FileVersion>7.0.0</FileVersion>
+    <AssemblyVersion>7.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,12 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cadmus.Core" Version="6.1.18" />
-    <PackageReference Include="Cadmus.General.Parts" Version="5.0.5" />
-    <PackageReference Include="Cadmus.Mongo" Version="6.1.18" />
-    <PackageReference Include="Cadmus.Philology.Parts" Version="7.0.3" />
-    <PackageReference Include="Cadmus.Seed.General.Parts" Version="5.0.5" />
-    <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="7.0.3" />
+    <PackageReference Include="Cadmus.Core" Version="7.0.0" />
+    <PackageReference Include="Cadmus.General.Parts" Version="6.0.1" />
+    <PackageReference Include="Cadmus.Mongo" Version="7.0.0" />
+    <PackageReference Include="Cadmus.Philology.Parts" Version="8.0.1" />
+    <PackageReference Include="Cadmus.Seed.General.Parts" Version="6.0.1" />
+    <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="8.0.1" />
     <PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="3.0.0" />
   </ItemGroup>
 
