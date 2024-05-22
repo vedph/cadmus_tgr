@@ -1,4 +1,4 @@
-﻿using Cadmus.General.Parts;
+﻿using Cadmus.Mat.Bricks;
 
 namespace Cadmus.Tgr.Parts.Codicology;
 

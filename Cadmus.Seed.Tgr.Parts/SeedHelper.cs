@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using Cadmus.General.Parts;
+using Cadmus.Mat.Bricks;
 using Cadmus.Refs.Bricks;
 using System.Collections.Generic;
 
@@ -32,7 +32,7 @@ internal static class SeedHelper
 
     public static List<PhysicalSize> GetSizes(int min, int max)
     {
-        List<PhysicalSize> sizes = new();
+        List<PhysicalSize> sizes = [];
 
         for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
         {
