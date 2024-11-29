@@ -1,32 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-	<Nullable>enable</Nullable>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <TargetFramework>net8.0</TargetFramework>
-	<Nullable>enable</Nullable>
-    <Authors>Daniele Fusi</Authors>
-    <Company>Fusi</Company>
-    <Product>Cadmus</Product>
-    <Description>Cadmus TGR parts seeders.</Description>
-    <Copyright>By Daniele Fusi 2020</Copyright>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>7.0.2</Version>
-    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageTags>Cadmus;seed;TGR</PackageTags>
-    <FileVersion>7.0.2</FileVersion>
-    <AssemblyVersion>7.0.2</AssemblyVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Nullable>enable</Nullable>
+		<Authors>Daniele Fusi</Authors>
+		<Company>Fusi</Company>
+		<Product>Cadmus</Product>
+		<Description>Cadmus TGR parts seeders.</Description>
+		<Copyright>By Daniele Fusi 2020</Copyright>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<Version>8.0.0</Version>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<PackageTags>Cadmus;seed;TGR</PackageTags>
+		<FileVersion>8.0.0</FileVersion>
+		<AssemblyVersion>8.0.0</AssemblyVersion>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Bogus" Version="35.5.1" />
-    <PackageReference Include="Cadmus.Core" Version="7.0.3" />
-    <PackageReference Include="Cadmus.Seed" Version="7.0.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Bogus" Version="35.6.1" />
+		<PackageReference Include="Cadmus.Core" Version="8.0.0" />
+		<PackageReference Include="Cadmus.Seed" Version="8.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Cadmus.Tgr.Parts\Cadmus.Tgr.Parts.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Cadmus.Tgr.Parts\Cadmus.Tgr.Parts.csproj" />
+	</ItemGroup>
 
 </Project>
