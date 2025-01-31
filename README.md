@@ -4,6 +4,10 @@ Components for the _Tradizione Grammaticale Romana_ project (here TGR for short)
 
 ## History
 
+### 8.0.2
+
+- 2025-01-31: updated packages.
+
 ### 8.0.1
 
 - 2025-01-07: updated packages.
