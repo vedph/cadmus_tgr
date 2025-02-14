@@ -11,11 +11,11 @@
 		<Description>Cadmus TGR project services.</Description>
 		<Copyright>By Daniele Fusi 2020</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
-		<Version>8.0.3</Version>
+		<Version>8.0.4</Version>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;TGR</PackageTags>
-		<FileVersion>8.0.3</FileVersion>
-		<AssemblyVersion>8.0.3</AssemblyVersion>
+		<FileVersion>8.0.4</FileVersion>
+		<AssemblyVersion>8.0.4</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -24,12 +24,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Core" Version="8.0.5" />
-		<PackageReference Include="Cadmus.General.Parts" Version="7.0.2" />
-		<PackageReference Include="Cadmus.Mongo" Version="8.0.5" />
-		<PackageReference Include="Cadmus.Philology.Parts" Version="9.0.2" />
-		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.2" />
-		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.2" />
+		<PackageReference Include="Cadmus.Core" Version="8.0.6" />
+		<PackageReference Include="Cadmus.General.Parts" Version="7.0.3" />
+		<PackageReference Include="Cadmus.Mongo" Version="8.0.6" />
+		<PackageReference Include="Cadmus.Philology.Parts" Version="9.0.3" />
+		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.3" />
+		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.3" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="4.0.0" />
 	</ItemGroup>
 

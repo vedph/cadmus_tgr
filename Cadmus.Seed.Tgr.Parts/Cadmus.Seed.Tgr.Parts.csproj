@@ -12,17 +12,17 @@
 		<Description>Cadmus TGR parts seeders.</Description>
 		<Copyright>By Daniele Fusi 2020</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
-		<Version>8.0.3</Version>
+		<Version>8.0.4</Version>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;seed;TGR</PackageTags>
-		<FileVersion>8.0.3</FileVersion>
-		<AssemblyVersion>8.0.3</AssemblyVersion>
+		<FileVersion>8.0.4</FileVersion>
+		<AssemblyVersion>8.0.4</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Bogus" Version="35.6.1" />
-		<PackageReference Include="Cadmus.Core" Version="8.0.5" />
-		<PackageReference Include="Cadmus.Seed" Version="8.0.5" />
+		<PackageReference Include="Cadmus.Core" Version="8.0.6" />
+		<PackageReference Include="Cadmus.Seed" Version="8.0.6" />
 	</ItemGroup>
 
 	<ItemGroup>
