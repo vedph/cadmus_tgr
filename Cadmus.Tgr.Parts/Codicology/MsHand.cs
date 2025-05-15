@@ -50,7 +50,7 @@ public class MsHand
     /// </summary>
     public MsHand()
     {
-        Letters = new List<MsHandLetter>();
+        Letters = [];
     }
 
     /// <summary>

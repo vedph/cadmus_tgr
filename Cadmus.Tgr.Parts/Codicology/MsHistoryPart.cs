@@ -43,9 +43,9 @@ public sealed class MsHistoryPart : PartBase
     /// </summary>
     public MsHistoryPart()
     {
-        Provenances = new List<GeoAddress>();
-        Owners = new List<string>();
-        Annotations = new List<MsAnnotation>();
+        Provenances = [];
+        Owners = [];
+        Annotations = [];
     }
 
     /// <summary>
@@ -82,7 +82,7 @@ public sealed class MsHistoryPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.String,
                "area",
@@ -92,7 +92,7 @@ public sealed class MsHistoryPart : PartBase
                "owner",
                "The list of manuscript's owners.",
                "Mf")
-        });
+        }];
     }
 
     /// <summary>

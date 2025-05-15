@@ -33,8 +33,8 @@ public class MsScript
     /// </summary>
     public MsScript()
     {
-        Languages = new List<string>();
-        Hands = new List<MsHand>();
+        Languages = [];
+        Hands = [];
     }
 
     /// <summary>

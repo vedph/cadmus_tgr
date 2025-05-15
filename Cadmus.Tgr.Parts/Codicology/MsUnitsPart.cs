@@ -22,7 +22,7 @@ public sealed class MsUnitsPart : PartBase
     /// </summary>
     public MsUnitsPart()
     {
-        Units = new List<MsUnit>();
+        Units = [];
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ public sealed class MsUnitsPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 "tot-count",
@@ -87,7 +87,7 @@ public sealed class MsUnitsPart : PartBase
                 "guard-sheet-count",
                 "The units guard sheet counts.",
                 "M")
-        });
+        }];
     }
 
     /// <summary>

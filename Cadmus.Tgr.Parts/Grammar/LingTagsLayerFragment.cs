@@ -38,7 +38,7 @@ public sealed class LingTagsLayerFragment : ITextLayerFragment
     public LingTagsLayerFragment()
     {
         Location = "";
-        Forms = new List<LingTaggedForm>();
+        Forms = [];
     }
 
     /// <summary>
@@ -87,7 +87,7 @@ public sealed class LingTagsLayerFragment : ITextLayerFragment
     /// <returns>Data pins definitions.</returns>
     public IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 PartBase.FR_PREFIX + "tot-count",
@@ -100,7 +100,7 @@ public sealed class LingTagsLayerFragment : ITextLayerFragment
                 PartBase.FR_PREFIX + "tag",
                 "A tag.",
                 "M")
-        });
+        }];
     }
 
     /// <summary>

@@ -32,7 +32,7 @@ public sealed class AvailableWitnessesLayerFragment : ITextLayerFragment
     public AvailableWitnessesLayerFragment()
     {
         Location = "";
-        Witnesses = new List<AvailableWitness>();
+        Witnesses = [];
     }
 
     /// <summary>
@@ -65,7 +65,7 @@ public sealed class AvailableWitnessesLayerFragment : ITextLayerFragment
     /// </returns>
     public IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                PartBase.FR_PREFIX + "tot-count",
@@ -74,6 +74,6 @@ public sealed class AvailableWitnessesLayerFragment : ITextLayerFragment
                PartBase.FR_PREFIX + "witness",
                "The list of witnesses IDs.",
                "M")
-        });
+        }];
     }
 }

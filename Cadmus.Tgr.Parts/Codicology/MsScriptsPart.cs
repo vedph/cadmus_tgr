@@ -20,7 +20,7 @@ public sealed class MsScriptsPart : PartBase
     /// </summary>
     public MsScriptsPart()
     {
-        Scripts = new List<MsScript>();
+        Scripts = [];
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ public sealed class MsScriptsPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 "tot-count",
@@ -80,7 +80,7 @@ public sealed class MsScriptsPart : PartBase
                 "type",
                 "The scripts type.",
                 "M")
-        });
+        }];
     }
 
     /// <summary>

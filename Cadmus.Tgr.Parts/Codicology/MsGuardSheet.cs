@@ -33,7 +33,7 @@ public class MsGuardSheet
     /// </summary>
     public MsGuardSheet()
     {
-        Watermarks = new List<MsWatermark>();
+        Watermarks = [];
     }
 
     /// <summary>

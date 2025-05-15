@@ -37,7 +37,7 @@ public sealed class InterpolationsLayerFragment : ITextLayerFragment
     public InterpolationsLayerFragment()
     {
         Location = "";
-        Interpolations = new List<Interpolation>();
+        Interpolations = [];
     }
 
     /// <summary>
@@ -85,7 +85,7 @@ public sealed class InterpolationsLayerFragment : ITextLayerFragment
     /// <returns>Data pins definitions.</returns>
     public IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 PartBase.FR_PREFIX + "tot-count",
@@ -106,7 +106,7 @@ public sealed class InterpolationsLayerFragment : ITextLayerFragment
                 PartBase.FR_PREFIX + "role",
                 "The list of roles.",
                 "M")
-        });
+        }];
     }
 
     /// <summary>

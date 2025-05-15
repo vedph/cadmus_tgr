@@ -58,7 +58,7 @@ public class MsContent
     /// </summary>
     public MsContent()
     {
-        Editions = new List<DocReference>();
+        Editions = [];
     }
 
     /// <summary>

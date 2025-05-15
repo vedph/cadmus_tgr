@@ -51,7 +51,7 @@ public class MsPlace
     /// </summary>
     public MsPlace()
     {
-        Sources = new List<DocReference>();
+        Sources = [];
     }
 
     /// <summary>

@@ -34,8 +34,8 @@ public class LingTaggedForm
     /// </summary>
     public LingTaggedForm()
     {
-        Lemmata = new List<string>();
-        Tags = new List<AnnotatedTag>();
+        Lemmata = [];
+        Tags = [];
     }
 
     /// <summary>

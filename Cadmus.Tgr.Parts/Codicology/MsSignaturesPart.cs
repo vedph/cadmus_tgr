@@ -25,7 +25,7 @@ public sealed class MsSignaturesPart : PartBase
     /// </summary>
     public MsSignaturesPart()
     {
-        Signatures = new List<MsSignature>();
+        Signatures = [];
     }
 
     /// <summary>
@@ -71,7 +71,7 @@ public sealed class MsSignaturesPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 "tot-count",
@@ -87,7 +87,7 @@ public sealed class MsSignaturesPart : PartBase
                 "city",
                 "The list of cities from the signatures.",
                 "MF")
-        });
+        }];
     }
 
     /// <summary>

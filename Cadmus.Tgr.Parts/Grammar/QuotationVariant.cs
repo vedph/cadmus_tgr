@@ -44,8 +44,8 @@ public class QuotationVariant
     /// </summary>
     public QuotationVariant()
     {
-        Witnesses = new List<AnnotatedValue>();
-        Authors = new List<LocAnnotatedValue>();
+        Witnesses = [];
+        Authors = [];
     }
 
     /// <summary>

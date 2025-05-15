@@ -29,6 +29,11 @@ public class VarQuotation
     public string? Location { get; set; }
 
     /// <summary>
+    /// Gets or sets the sub-range of an inner quotation.
+    /// </summary>
+    public string? Subrange { get; set; }
+
+    /// <summary>
     /// Gets or sets an optional note.
     /// </summary>
     public string? Note { get; set; }
@@ -50,8 +55,8 @@ public class VarQuotation
     /// </summary>
     public VarQuotation()
     {
-        Parallels = new List<QuotationParallel>();
-        Variants = new List<QuotationVariant>();
+        Parallels = [];
+        Variants = [];
     }
 
     /// <summary>

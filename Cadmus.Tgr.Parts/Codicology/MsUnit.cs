@@ -135,14 +135,14 @@ public class MsUnit
     /// </summary>
     public MsUnit()
     {
-        Palimpsests = new List<MsPalimpsest>();
-        GuardSheets = new List<MsGuardSheet>();
-        LeafSizes = new List<PhysicalSize>();
-        LeafSizeSamples = new List<MsLocation>();
-        WrittenAreaSizes = new List<PhysicalSize>();
-        WrittenAreaSizeSamples = new List<MsLocation>();
-        Rulings = new List<MsRuling>();
-        Watermarks = new List<MsWatermark>();
+        Palimpsests = [];
+        GuardSheets = [];
+        LeafSizes = [];
+        LeafSizeSamples = [];
+        WrittenAreaSizes = [];
+        WrittenAreaSizeSamples = [];
+        Rulings = [];
+        Watermarks = [];
     }
 
     /// <summary>

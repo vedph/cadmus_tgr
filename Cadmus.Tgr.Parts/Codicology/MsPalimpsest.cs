@@ -29,7 +29,7 @@ public class MsPalimpsest
     /// </summary>
     public MsPalimpsest()
     {
-        Locations = new List<MsLocation>();
+        Locations = [];
     }
 
     /// <summary>

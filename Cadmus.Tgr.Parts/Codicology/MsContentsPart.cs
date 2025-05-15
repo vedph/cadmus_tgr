@@ -22,7 +22,7 @@ public sealed class MsContentsPart : PartBase
     /// </summary>
     public MsContentsPart()
     {
-        Contents = new List<MsContent>();
+        Contents = [];
     }
 
     /// <summary>
@@ -58,7 +58,7 @@ public sealed class MsContentsPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 "tot-count",
@@ -71,7 +71,7 @@ public sealed class MsContentsPart : PartBase
                 "title",
                 "The contents titles.",
                 "Mf")
-        });
+        }];
     }
 
     /// <summary>

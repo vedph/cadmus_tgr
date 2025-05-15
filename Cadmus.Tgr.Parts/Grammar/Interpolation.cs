@@ -60,8 +60,8 @@ public class Interpolation
     /// </summary>
     public Interpolation()
     {
-        Sources = new List<ReadingSource>();
-        Quotations = new List<VarQuotation>();
+        Sources = [];
+        Quotations = [];
     }
 
     /// <summary>

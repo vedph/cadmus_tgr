@@ -22,7 +22,7 @@ public class AnnotatedTag
     /// </summary>
     public AnnotatedTag()
     {
-        Notes = new List<TaggedNote>();
+        Notes = [];
     }
 
     /// <summary>

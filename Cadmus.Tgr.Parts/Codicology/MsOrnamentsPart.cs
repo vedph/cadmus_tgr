@@ -22,7 +22,7 @@ public sealed class MsOrnamentsPart : PartBase
     /// </summary>
     public MsOrnamentsPart()
     {
-        Ornaments = new List<MsOrnament>();
+        Ornaments = [];
     }
 
     /// <summary>
@@ -57,7 +57,7 @@ public sealed class MsOrnamentsPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 "tot-count",
@@ -65,7 +65,7 @@ public sealed class MsOrnamentsPart : PartBase
             new DataPinDefinition(DataPinValueType.Integer,
                 "type-{TYPE}-count",
                 "The count of each ornamentation's type.")
-        });
+        }];
     }
 
     /// <summary>

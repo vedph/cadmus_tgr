@@ -9,9 +9,9 @@
 		<Product>Cadmus</Product>
 		<Copyright>By Daniele Fusi 2020</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
-		<Version>8.0.5</Version>
-		<FileVersion>8.0.5</FileVersion>
-		<AssemblyVersion>8.0.5</AssemblyVersion>
+		<Version>8.0.6</Version>
+		<FileVersion>8.0.6</FileVersion>
+		<AssemblyVersion>8.0.6</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>

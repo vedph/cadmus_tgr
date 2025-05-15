@@ -23,7 +23,7 @@ public sealed class AvailableWitnessesPart : PartBase
     /// </summary>
     public AvailableWitnessesPart()
     {
-        Witnesses = new List<AvailableWitness>();
+        Witnesses = [];
     }
 
     /// <summary>
@@ -52,7 +52,7 @@ public sealed class AvailableWitnessesPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                "tot-count",
@@ -61,7 +61,7 @@ public sealed class AvailableWitnessesPart : PartBase
                "witness",
                "The list of witnesses IDs.",
                "M")
-        });
+        }];
     }
 
     /// <summary>

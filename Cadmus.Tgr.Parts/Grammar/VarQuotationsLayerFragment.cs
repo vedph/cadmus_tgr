@@ -37,7 +37,7 @@ public sealed class VarQuotationsLayerFragment : ITextLayerFragment
     public VarQuotationsLayerFragment()
     {
         Location = "";
-        Quotations = new List<VarQuotation>();
+        Quotations = [];
     }
 
     /// <summary>
@@ -91,7 +91,7 @@ public sealed class VarQuotationsLayerFragment : ITextLayerFragment
     /// <returns>Data pins definitions.</returns>
     public IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 PartBase.FR_PREFIX + "tot-count",
@@ -116,7 +116,7 @@ public sealed class VarQuotationsLayerFragment : ITextLayerFragment
                 PartBase.FR_PREFIX + "var-value",
                 "The list of quotation entry variants values.",
                 "MF")
-        });
+        }];
     }
 
     /// <summary>

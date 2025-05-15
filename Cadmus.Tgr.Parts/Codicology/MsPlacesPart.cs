@@ -22,7 +22,7 @@ public sealed class MsPlacesPart : PartBase
     /// </summary>
     public MsPlacesPart()
     {
-        Places = new List<MsPlace>();
+        Places = [];
     }
 
     /// <summary>
@@ -78,7 +78,7 @@ public sealed class MsPlacesPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                "tot-count",
@@ -100,7 +100,7 @@ public sealed class MsPlacesPart : PartBase
                 "The list of manuscript's address components, "+
                 "each numbered, if any.",
                 "Mf"),
-        });
+        }];
     }
 
     /// <summary>

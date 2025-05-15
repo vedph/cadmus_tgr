@@ -22,7 +22,7 @@ public sealed class MsFormalFeaturesPart : PartBase
     /// </summary>
     public MsFormalFeaturesPart()
     {
-        Features = new List<MsFormalFeature>();
+        Features = [];
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public sealed class MsFormalFeaturesPart : PartBase
     /// <returns>Data pins definitions.</returns>
     public override IList<DataPinDefinition> GetDataPinDefinitions()
     {
-        return new List<DataPinDefinition>(new[]
+        return [.. new[]
         {
             new DataPinDefinition(DataPinValueType.Integer,
                 "tot-count",
@@ -63,7 +63,7 @@ public sealed class MsFormalFeaturesPart : PartBase
                 "hand-id",
                 "The hand IDs.",
                 "M")
-        });
+        }];
     }
 
     /// <summary>

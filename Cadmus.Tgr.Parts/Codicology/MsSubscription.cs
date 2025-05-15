@@ -37,7 +37,7 @@ public class MsSubscription
     /// </summary>
     public MsSubscription()
     {
-        Locations = new List<MsLocation>();
+        Locations = [];
     }
 
     /// <summary>
